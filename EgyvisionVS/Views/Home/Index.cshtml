@@ -1,0 +1,513 @@
+﻿@model EgyVisionCore.Entities.EgyVision.VM.LKMenuCatContentVM;
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!--Slider-->
+<style>
+    /* Slider */
+
+    .slick-slide {
+        margin: 0px 20px;
+    }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+    .slick-slider {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -ms-touch-action: pan-y;
+        touch-action: pan-y;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .slick-list {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
+        .slick-list:focus {
+            outline: none;
+        }
+
+        .slick-list.dragging {
+            cursor: pointer;
+            cursor: hand;
+        }
+
+    .slick-slider .slick-track,
+    .slick-slider .slick-list {
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    .slick-track {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+    }
+
+        .slick-track:before,
+        .slick-track:after {
+            display: table;
+            content: '';
+        }
+
+        .slick-track:after {
+            clear: both;
+        }
+
+    .slick-loading .slick-track {
+        visibility: hidden;
+    }
+
+    .slick-slide {
+        display: none;
+        float: left;
+        height: 100%;
+        min-height: 1px;
+    }
+
+    [dir='rtl'] .slick-slide {
+        float: right;
+    }
+
+    .slick-slide img {
+        display: block;
+    }
+
+    .slick-slide.slick-loading img {
+        display: none;
+    }
+
+    .slick-slide.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized .slick-slide {
+        display: block;
+    }
+
+    .slick-loading .slick-slide {
+        visibility: hidden;
+    }
+
+    .slick-vertical .slick-slide {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+
+    .slick-arrow.slick-hidden {
+        display: none;
+    }
+
+    .owl-theme .owl-dots, .owl-theme .owl-nav {
+        display: none;
+    }
+    .Clients_info {
+        margin: 5.5rem 0 !important;
+    }
+</style>
+
+<div class="wholebody">
+    <!--Right side menu-->
+    <div class="secondaryOpacity text-center sidemenu pt-1 mr-lg-5 mr-md-0">
+        <div class="header-content text-center">
+            <div class="logo-responsve row h-100 d-flex justify-content-between">
+                <div class="logo_site text-center my-auto">
+                    <a href="/Home/Index">
+                        <img src="/Home/DownLogoImage">
+                    </a>
+                </div>
+                <div class="row h-100">
+                    <span class="menu_icon my-auto text-white d-block d-sm-block d-md-block d-lg-none"
+                          onclick="openNav()">
+                        <i class="fas fa-bars"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="responsive-social justify-content-between">
+            <div class="social_we">
+                <div class="we_social">
+                    <p>We Are Social</p>
+                </div>
+                <div class="reverse_border"></div>
+                <ul class="social-network social-circle text-black">
+                    <li class="mb-3" id="twitter">
+                        <a class="fb" href="" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a class="linkIn" href="" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li class="mb-3">
+                        <a class="insta" href="" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="LetsMeet text-black d-none d-sm-none d-md-block d-lg-block">
+                <h4><a href="/Home/About" class="text-black readme">Let's Meet</a></h4>
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync("Slider")
+
+    <!-- Left side menu-->
+    <div class="secondaryOpacity2 text-center sidemenu Sidemenu2"
+         id="sidebar">
+        <div id="mySidenav1" class="sidenav">
+            <a href="javascript:void(0)"
+               class="closebtn"
+               onclick="closeNav()"><i class="fas fa-times"></i></a>
+            <!-- <h4 class="text-left text-white Logo-menu">
+              ATMA <span class="text-primary">.</span>
+            </h4> -->
+            <div class="side_links">
+                <div class="title_menu d-flex align-items-center text-white">
+                    <h4 class="m-auto">Menu</h4>
+                </div>
+                <div class="menu_border">
+                    <div class="reverse_border bg-white mt-5"></div>
+                </div>
+                <div class="overlay-content">
+                    <a href="/Home/Index">Home</a>
+                    <a href="/Home/About">About</a>
+                    <a href="/Home/Projects">Projects</a>
+                    <a href="/Home/Contact">Contact</a>
+                </div>
+                <div class="menu_border">
+                    <div class="reverse_border bg-white"></div>
+                </div>
+            </div>
+            <ul class="social-network-nav social-circle text-white">
+                <li class="">
+                    <a class="fb" href="" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+                <li class="mx-3">
+                    <a class="linkIn" href="">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+                <li class="">
+                    <a class="insta" href="" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <span class="menu_icon text-white d-none d-sm-none d-md-block d-lg-block"
+              onclick="openNav()">
+            <i class="fas fa-bars"></i>
+        </span>
+    </div>
+</div>
+<!--Features Section-->
+<!---About us-->
+
+<section class="abour_us bg-black" id="info">
+    <div class="container">
+        <div class="AboutUs_info_home text-white p-4" >
+            <h3 class="text-center p-3 mb-4 wow bounceIn" data-wow-duration="1s" data-wow-delay="0.5" data-wow-offset="100">
+                Why WPC?!
+            </h3>
+            <div class="wow bounceIn aboutsectionEditDIV" style="text-align: center;" data-wow-duration="1s" data-wow-delay=".5s" data-wow-offset="100">
+                <span class="aboutsectionEdit" >
+                    
+                   @Model.HomeAboutUEn
+                    <a href="/Home/about" class="readme text-white">...Read More</a>
+                    
+                </span>
+            </div>
+
+        </div>
+    </div>
+
+    <!--Service Section-->
+    <div class="Main-Features">
+        <div class="container">
+            <div class="services text-white p-4">
+                <h3 class="text-center p-3 mb-4 wow bounceIn" data-wow-duration="1s" data-wow-delay="0.5" data-wow-offset="100">
+                    Services
+                </h3>
+                <div class="row">
+                    <div class="col-lg-4 p-0 col-md-4 col-sm-6 col-12">
+                        <div class="Features wow bounceIn" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="100">
+                            <div class="feature_content">
+                                <img src="~/images/truck-transport-with-construction-materials@2x.png">
+                                <h4 class="mt-2">
+                                    Materials Import
+                                    <br>
+                                    & Supply
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 p-0 col-md-4 col-sm-6 col-12">
+                        <div class="Features wow bounceIn" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="100">
+                            <div class="feature_content">
+                                <img src="~/images/transparent-lamp-icon-interior-design-icon-living-room-icon-5dd3ac6ab17763.1137765315741533227269.png">
+                                <h4 class="mt-2">
+                                    Installation<br>
+                                    & Contracting
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 p-0 col-md-4 col-sm-6 col-12">
+                        <div class="Features wow bounceIn" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="100">
+                            <div class="feature_content">
+                                <img src="~/images/clipart1991391.png">
+                                <h4 class="mt-2">
+                                    Smart Home <br>
+                                    Solutions
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!---Our Services (projects)-->
+<section class="Services">
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <div class="container">
+        @await Component.InvokeAsync("HomeLandProjects")
+    </div>
+
+</section>
+
+<!---Our Clients (Partner)-->
+<div class="Clients_Contactus">
+    <div class="container">
+        <div class="Clients_info">
+            <div class="Clients mb-5">
+                <div class="mb-5">
+                    <h3 class="text-center  mb-0 pb-0 wow bounceIn text-white" data-wow-duration="1s" data-wow-delay="0" data-wow-offset="100">
+                        OUr Partners
+                    </h3>
+                </div>
+
+                <!--  Demos -->
+                <div id="demos" class="">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="owl-carousel owl-theme mainNav Partners clients_logoes">
+                                    <!-- item -->
+                                    <div class="item">
+                                        <img src="~/images/LOGO/Qube.png" class="mt-auto">
+                                    </div>
+                                    <!-- item -->
+                                    <div class="item">
+                                        <img src="~/images/LOGO/BeachTown.png" class="mt-auto">
+                                    </div>
+                                    <!-- item -->
+                                    <div class="item">
+                                        <img src="~/images/LOGO/ASGC.png" class="mt-auto">
+                                    </div>
+                                    <!-- item -->
+                                    <div class="item">
+                                        <img src="~/images/LOGO/dunes.png" class="mt-auto">
+                                    </div>
+                                    <!-- item -->
+                                    <div class="item">
+                                        <img src="~/images/LOGO/Emmar.png" class="mt-auto">
+                                    </div>
+                                    <!-- item -->
+                                    <div class="item">
+                                        <img src="~/images/LOGO/Layer0.png" class="mt-auto">
+                                    </div>
+                                    <!-- item -->
+                                    <div class="item">
+                                        <img src="~/images/LOGO/Ofoq.png" class="mt-auto">
+                                    </div>
+                                    <!-- item -->
+                                    <div class="item">
+                                        <img src="~/images/LOGO/Travco properties.png" class="mt-auto">
+                                    </div>
+                                    <!-- item -->
+                                    <div class="item">
+                                        <img src="~/images/LOGO/Rabwa.png" class="mt-auto">
+                                    </div>
+                                    <!-- item -->
+                                    <div class="item">
+                                        <img src="~/images/LOGO/rev.png" class="mt-auto">
+                                    </div>
+                                    <!-- item -->
+                                    <div class="item">
+                                        <img src="~/images/LOGO/Zyed Regency.png" class="mt-auto">
+                                    </div>
+                                    <!-- item -->
+                                    <div class="item">
+                                        <img src="~/images/LOGO/Travco.png" class="mt-auto">
+                                    </div>
+
+                                    <!-- \\ item -->
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                @*<div class="Partners clients_logoes pb-5">
+                    <div class="customer-logos slider">
+                        <div class="slide">
+                            <div class="item row">
+                                <img src="~/images/LOGO/Qube.png" class="mt-auto">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="item row">
+                                <img src="~/images/LOGO/dunes.png" class="mt-auto">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="item row">
+                                <img src="~/images/LOGO/Ofoq.png" class="mt-auto">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="item row">
+                                <img src="~/images/LOGO/Rabwa.png" class="mt-auto">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="item row">
+                                <img src="~/images/LOGO/rev.png" class="mt-auto">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="item row">
+                                <img src="~/images/LOGO/Zyed Regency.png" class="mt-auto">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="item row">
+                                <img src="~/images/LOGO/BeachTown.png" class="mt-auto">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="item row">
+                                <img src="~/images/LOGO/Layer0.png" class="mt-auto">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="item row">
+                                <img src="~/images/LOGO/Travco properties.png" class="mt-auto">
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="item row">
+                                <img src="~/images/LOGO/Travco.png" class="mt-auto">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>*@
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--footer-->
+@await Component.InvokeAsync("Footer")
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            //#region set social links
+            $.ajax({
+                url: '/Home/LoadContactUs',
+                type: 'POST',
+                success: function (data) {
+                    if (data.contactUs != null) {
+                        $(".fb").attr('href', data.contactUs.facebookUrl);
+                        $(".linkIn").attr('href', data.contactUs.linkedinUrl)
+                        $(".insta").attr('href', data.contactUs.instagramUrl)
+                    }
+                },
+                error: function (err) {
+                    alert('Some Thing Went Wrong !');
+                },
+                complete: function (data) {
+
+                }
+            });
+            //#endregion
+        });
+
+
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.mainNav').owlCarousel({
+                rtl: false,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 2,
+                        nav: false
+                    },
+                    600: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 6,
+                        nav: false,
+                        loop: true,
+                        margin: 20
+                    }
+                }
+            })
+        })
+    </script>
+
+    
+}

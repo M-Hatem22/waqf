@@ -1,0 +1,17 @@
+CREATE TABLE ContactUs(
+ ID INT PRIMARY key IDENTITY (1,1),
+ PhoneNumber nvarchar(20) null,
+ MobileNumber nvarchar(20) null,
+ Email nvarchar(100) NULL,
+ TitleAr nvarchar(200) NULL,
+ TitleEn nvarchar(200) NULL,
+ GoogleURL nvarchar(200) NULL,
+ FacebookUrl nvarchar(100) null,
+ GooglePlus  nvarchar(100) null,
+ InstagramUrl nvarchar(100) null,
+ YoutubeUrl nvarchar(100) null,
+ LinkedinUrl nvarchar(100) null,
+ TwitterUrl nvarchar(100) null,
+ Latitude float NULL, 
+ Longitude float NULL, 
+)

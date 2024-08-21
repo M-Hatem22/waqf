@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewData["Title"] = "Register";
+
+}
+@model RegisterVm
+
+@* <hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div> *@
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ATMA</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+            ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Bootstrap CSS
+            ============================================ -->
+    <link rel="stylesheet" href="~/css/bootstrap-rtl.css">
+    <!-- Bootstrap CSS
+            ============================================ -->
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <!-- animate CSS
+            ============================================ -->
+    <link rel="stylesheet" href="~/css/animate.css">
+    <!-- form CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/form.css">
+    <!-- style CSS
+            ============================================ -->
+    <link rel="stylesheet" href="~/css/style-ar.css">
+    <style>
+        div label {
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="ac_overlay"></div>
+    <div class="login">
+        <form asp-action="Register" class="form">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group  InputLogin">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group InputLogin">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group InputLogin">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group InputLogin">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group InputLogin">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group InputLogin">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group InputLogin">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer Start-->
+    <!-- Footer End-->
+    <!-- jquery
+        ============================================ -->
+    <script src="~/js/vendor/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- jquery.gall.min
+        ============================================ -->
+    <script src="~/js/jquery.gall.min.js"></script>
+    <!-- main JS
+        ============================================ -->
+    <script>
+        $(window).load(function () {
+
+            $(".loading-overlay .loader").fadeOut(500,
+                function () {
+                    $(this).parent().fadeOut(500,
+                        function () {
+                            //show the scroll
+                            $("body").css("overflow", "auto");
+                            $(this).remove();
+
+                        });
+                });
+
+        });
+    </script>
+</body>
+</html>
+

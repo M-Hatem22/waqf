@@ -1,0 +1,184 @@
+﻿@using Microsoft.AspNetCore.Http
+
+
+<!-- Spinner Start -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner"></div>
+</div>
+<!-- Spinner End -->
+<label for="Name of org"></label>
+<input type="text"/>
+
+
+
+<style>
+      html, body {
+      height: 100%;
+      }
+      body, input, select { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #eee;
+      }
+      h1, h3 {
+      font-weight: 400;
+      }
+      h1 {
+      font-size: 32px;
+      }
+      h3 {
+      color: #1c87c9;
+      }
+      .main-block, .info {
+      display: flex;
+      flex-direction: column;
+      }
+      .main-block {
+      justify-content: center;
+      align-items: center;
+      width: 100%; 
+      min-height: 100%;
+      background-size: cover;
+      }
+      .block {
+      width: 80%; 
+      padding: 25px;
+      margin-bottom: 20px;
+      background: rgba(0, 0, 0, 0.9);
+      }
+      input{
+        margin-bottom: 20px;
+      }
+      input[type=text] {
+      padding: 5px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #eee;
+      }
+      input::placeholder {
+      color: #eee;
+      }
+      option {
+      background: black; 
+      border: none;
+      }
+      .metod {
+      display: flex; 
+      }
+      button{
+      background : red;
+      padding: 1px;
+      }
+      button:hover {
+      background: #095484;
+      }
+      button.main {
+      display: block;
+      width: 200px;
+      padding: 10px;
+      margin: 20px auto 0;
+      border: none;
+      border-radius: 5px; 
+      background: #1c87c9; 
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      }
+      @@media (min-width: 568px) {
+      .info {
+      flex-flow: row wrap;
+      justify-content: space-between;
+      }
+      input {
+      width: 46%;
+      }
+      input.fname {
+      width: 100%;
+      }
+     
+      }
+    </style>
+
+
+
+<div class="main-block">
+    <h1>البيانات الاساسية</h1>
+    <form method="post" class="block" action="/">
+        <div class="info">
+            <input class="fname" type="text" name="name" placeholder="اسم الجمعية">
+            <input type="text" name="phone" placeholder="رقم المحمول">
+            <input type="text" name="landLine" placeholder="رقم الارضى">
+            <input type="text" name="mail" placeholder="الايميل الرسمى">
+            <input type="text" name="fbAccount" placeholder="حساب فيسبوك">
+            <input type="text" name="xAccount" placeholder="حساب تويتر">
+            <input type="text" name="instaAccount" placeholder="حساب انستجرام">
+            <input type="text" name="snapchatAccount" placeholder="حساب سنابشات">
+            <input type="text" name="whatsappAccount" placeholder="رقم واتساب">
+
+            <button class="main button" type="submit">تأكيد تغيير البيانات</button>
+    </form>
+</div>
+
+<div class="main-block">
+    <h1>الملفات</h1>
+    <div class="block">
+        
+            <form action="/home/uploadfile" method="post" enctype="multipart/form-data" class="info d-flex align-items-baseline justify-content-between ">
+                <label class ="col-4">التراخيص</label>
+            <input class="col-4" type="text" name="file" >
+                <button class="col-2 button" type="submit">تأكيد تغيير الملف</button>
+                <hr />
+            </form>
+            <form action="/home/uploadfile" method="post" enctype="multipart/form-data" class="info d-flex align-items-baseline justify-content-between">
+                <label class="col-4">المؤسسون</label>
+            <input class="col-4" type="text" name="file">
+                <button class="col-2 button" type="submit">تأكيد تغيير الملف</button>
+                <hr />
+            </form>
+
+            <form action="/home/uploadfile" method="post" enctype="multipart/form-data" class="info d-flex align-items-baseline justify-content-between">
+                <label class ="col-4">اعضاء الجمعية العمومية</label>
+            <input class="col-4" type="text" name="file">
+                <button class="col-2 button" type="submit">تأكيد تغيير الملف</button>
+                <hr />
+            </form>
+
+            <form action="/home/uploadfile" method="post" enctype="multipart/form-data" class="info d-flex align-items-baseline justify-content-between">
+                <label class="col-4">اعضاء مجلس الادارة</label>
+            <input class="col-4" type="text" name="file">
+                <button class="col-2 button" type="submit">تأكيد تغيير الملف</button>
+                <hr />
+            </form>
+
+            <form action="/home/uploadfile" method="post" enctype="multipart/form-data" class="info d-flex align-items-baseline justify-content-between">
+                <label class="col-4">الادارة التنفيذية</label>
+            <input class="col-4" type="text" name="file" >
+                <button class="col-2 button " type="submit">تأكيد تغيير الملف</button>
+                <hr />
+            </form>
+
+            <form action="/home/uploadfile" method="post" enctype="multipart/form-data" class="info d-flex align-items-baseline justify-content-between">
+                <label class="col-4">الهيكل التنظيمى</label>
+            <input class="col-4" type="text" name="file" >
+                <button class="col-2 button " type="submit">تأكيد تغيير الملف</button>
+                <hr />
+            </form>
+
+            <form action="/home/uploadfile" method="post" enctype="multipart/form-data" class="info d-flex align-items-baseline justify-content-between">
+                <label class ="col-4" >شكر و تقدير</label>
+            <input class="col-4" type="text" name="file" placeholder="رقم المحمول">
+                <button class="col-2 button " type="submit">تأكيد تغيير الملف</button>
+                <hr />
+            </form>
+
+            <form action="/home/uploadfile" method="post" enctype="multipart/form-data" class="info d-flex align-items-baseline justify-content-between">
+                <label class="col-4">شركاء النجاح</label>
+                <input class="col-4" type="text" name="file"/>
+                <button class="col-2 button"  type="submit" >تأكيد تغيير الملف</button>
+                <hr />
+            </form>
+    </div>
+</div>

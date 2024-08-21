@@ -1,0 +1,261 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Http
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Projects"];
+}
+
+
+<!-- Content -->
+<!-- Lines -->
+<section class="content-lines-wrapper">
+    <div class="content-lines-inner">
+        <div class="content-lines"></div>
+    </div>
+</section>
+<!-- Header Banner -->
+<section class="banner-header banner-img valign bg-img bg-fixed bgBanner" data-overlay-light="3"
+         data-background="~/img/banner.jpg">
+    <!-- Left Panel -->
+    <div class="left-panel"></div>
+</section>
+<!-- Project Gallery -->
+<section class="section-padding2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="section-title">@Localizer["Products"]<span>@*@Localizer["Gallery"]*@</span></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="bauen-gallery-filter">
+                    <li class="active" data-filter="*">@Localizer["All"]</li>
+                    <li data-filter=".Kitchens">@Localizer["Kitchens"]</li>
+                    @*<li data-filter=".casework">@Localizer["casework"]</li>
+                    <li data-filter=".receivingCounters">@Localizer["receivingCounters"]</li>*@
+                    <li data-filter=".KitchenCabinets">@Localizer["KitchenCabinets"]</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row bauen-gallery-items">
+            @*<div class="col-md-6 gallery-masonry-wrapper single-item KitchenCabinets">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchen-cabinets/1.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["KitchenCabinets"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>*@
+
+            <div class="col-md-6 gallery-masonry-wrapper single-item KitchenCabinets">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchen-cabinets/2.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["KitchenCabinets"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item KitchenCabinets">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchen-cabinets/3.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["KitchenCabinets"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item Kitchens">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchens/1.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["Kitchens"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item Kitchens">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchens/2.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["Kitchens"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item Kitchens">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchens/3.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["Kitchens"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item Kitchens">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchens/4.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["Kitchens"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item Kitchens">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchens/5.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["Kitchens"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item Kitchens">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchens/6.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["Kitchens"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item Kitchens">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchens/8.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["Kitchens"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item Kitchens">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchens/7.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["Kitchens"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-6 gallery-masonry-wrapper single-item Kitchens">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchens/9.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["Kitchens"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item Kitchens">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchens/10.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["Kitchens"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item Kitchens">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchens/11.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["Kitchens"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item Kitchens">
+                <a href="img/projects/1.jpg" title="Cotton House" class="gallery-masonry-item-img-link img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/Gallery/Kitchens/12.jpg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                        <div class="gallery-masonry-item-img"></div>
+                        <div class="gallery-masonry-item-content">
+                            <h4 class="gallery-masonry-item-title">@Localizer["Products"]</h4>
+                            <div class="gallery-masonry-item-category">@Localizer["Kitchens"]</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Promo video - Testiominals -->
+<section class="testimonials">
+    <div class="bgBanner2 background bg-img bg-fixed section-padding pb-0" data-background="img/banner2.jpg"
+         data-overlay-dark="3">
+        <div class="container">
+            <div class="row">
+                <!-- Promo video -->
+                <div class="col-md-12">
+                    <div class="vid-area">
+                        <div class="vid-icon">
+                            <a class="play-button vid" href="https://www.youtube.com/watch?v=9o9QHKkVTdE">
+                                <svg class="circle-fill">
+                                    <circle cx="43" cy="43" r="39" stroke="#fff" stroke-width=".5"></circle>
+                                </svg>
+                                <svg class="circle-track">
+                                    <circle cx="43" cy="43" r="39" stroke="none" stroke-width="1" fill="none">
+                                    </circle>
+                                </svg> <span class="polygon">
+                                    <i class="ti-control-play"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="cont mt-15 mb-30">
+                            <h5>@Localizer["ViewPromoVideo"]</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

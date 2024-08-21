@@ -1,0 +1,402 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<style>
+    html, body {
+        height: 100%;
+    }
+
+    body, input, select {
+        padding: 0;
+        margin: 0;
+        outline: none;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 16px;
+        color: #eee;
+    }
+
+    h1, h3 {
+        font-weight: 400;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h3 {
+        color: #1c87c9;
+    }
+
+    .main-block, .info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-block {
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+    }
+
+    .block {
+        width: 80%;
+        padding: 25px;
+        margin-bottom: 20px;
+        background: rgba(0, 0, 0, 0.9);
+    }
+
+    input {
+        margin-bottom: 10px;
+    }
+
+        input[type=text] {
+            padding: 5px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #eee;
+        }
+
+        input::placeholder {
+            color: #eee;
+        }
+
+    label {
+        width: 10%;
+    }
+
+    option {
+        background: black;
+        border: none;
+    }
+
+    .metod {
+        display: flex;
+    }
+
+    button {
+        background: red;
+        padding: 1px;
+    }
+
+        button:hover {
+            background: #095484;
+        }
+
+        button.main {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 20px auto 0;
+            border: none;
+            border-radius: 5px;
+            background: #1c87c9;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+    form {
+        align-items: baseline;
+        /* justify-content:space-between; */
+    }
+
+    @@media (min-width: 568px) {
+        .info {
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        input {
+            width: 65%;
+        }
+
+            input.fname {
+                width: 100%;
+            }
+    }
+</style>
+
+
+<div class="main-block">
+    <h1>البيانات الاساسية</h1>
+    <div class="block container-fluid " id="infoData">
+    </div>
+</div>
+
+<div class="basic-form-area mg-b-15">
+
+    <div class="col-lg-12">
+        <!---- tab ----->
+
+        <div class="sparkline9-list shadow-reset mg-b-30">
+            <div class="sparkline9-hd">
+                <div class="main-sparkline9-hd">
+                    <h1>الملفات</h1>
+                    <div class="sparkline9-outline-icon">
+                        @* <button type="button" class="Additme btn-custon-four btn-warning btn-xs" data-toggle='modal' data-target='#AddModal' id="ADD">
+                            <span class="fa fa-pencil"></span>إضافة
+                        </button> *@
+                        <span class="sparkline9-collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="sparkline9-graph">
+                <div class="datatable-dashv1-list custom-datatable-overright">
+                    <div id="toolbar">
+                    </div>
+                    <table id="ToaaFilesTable" data-toggle="table" data-pagination="true" data-search="false" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true"
+                           data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true"
+                           data-toolbar="#toolbar">
+                        <thead>
+                            <tr>
+                                @* <th data-field="ToaaFileId">ID</th> *@
+                                <th data-field="ToaaFileType">نوع الملف </th>
+                                @* <th data-field="ToaaFileNameAr">الإسم عربي</th> *@
+                                @* <th data-field="ToaaFileNameEn">الإسم إنجليزي </th> *@
+                                <th>التحميل </th>
+                                <th>العرض </th>
+                                <th data-field="action">الاوامر</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--- End tab --->
+</div>
+<!--Modal Edit start-->
+<div class="modal" id="EditModal">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">تعديل ملف</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <input type="hidden" id="AttachmentId" />
+                            <label>الإسم بالعربي</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="EditNameAr" placeholder=" الإسم بالعربي	">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                   @*  <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <label>الإسم بالإنجليزي</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="EditNameEn" placeholder=" الإسم بالإنجليزي	">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div> *@
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner ">
+                            <label>إختار الملف</label>
+                            <div class="file-upload-inner ts-forms">
+                                <div class="input prepend-small-btn">
+                                    <div class="file-button">
+                                        تحميل <input type="file" id="EditFile" name="EditFile" onchange="document.getElementById('Attach').value = this.value;" class="valid" aria-invalid="false">
+                                    </div>
+                                    <input type="text" id="Attach" placeholder="تحميل المستند" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="EditFile()">Change data </button>
+                <div id='loadingDiv'>
+                    Please wait...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--mModal Edit end-->
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.ajax({
+                url: '/Toaa/basicdata',
+                type: 'POST',
+                success: function (dataOut) {
+                    dataIn = dataOut.data;
+                    console.log(dataIn);
+                    if (dataOut.result == "OK") {
+                        for (var i = 0; i < dataOut.data.length; i++) {
+                            $("#infoData").html((index, content) => {
+                                if (@HttpContextAccessor.HttpContext.Session.GetString("Role") == "1") {
+                                    return content + ` <form action="/toaa/editdata" method = "post" enctype = "multipart/form-data" class="info">
+                                                    <input name="id" value="${dataIn[i].id}" hidden = "true">
+                                                      <label class="col-2" > ${dataIn[i].description}  </label>
+                                                      <input class="col-10" type = "text" name = "data" value= "${dataIn[i].data}" />
+                                                    <button class="col-2 button" type = "submit" > تغيير المحتوى </button>
+                                                  </form> 
+                                                  `
+                                } else {
+                                    return content + ` <form action="/toaa/editdata" method = "post" enctype = "multipart/form-data" class="info">
+                                                            <input name="id" value="${dataIn[i].id}" hidden = "true">
+                                                              <label class="col-2" > ${dataIn[i].description}  </label>
+                                                              <input class="col-10" type = "text" name = "data" disabled=true value= "${dataIn[i].data}" />
+                                                              <p> برجاء الاتصال بالادمن للتعديل </p>
+                                                          </form>
+                                                          `
+
+                                }
+                                              
+                                              });
+                        }
+                    }
+                    else if (dataOut.result == "ERROR")
+                        alert(data.Message);
+                },
+                error: function (err) {
+                    alert("Something Went Wrong!");
+                },
+                complete: function (dataOut) {
+                    // $.ajax({
+                    //     url: '/Toaa/secondarydata',
+                    //     type: 'GET',
+                    //     success: function () {
+                    //         dataIn = dataOut.data;
+                    //         console.log(dataIn);
+                    //         if (dataOut.result == "OK") {
+                    //             for (var i = 0; i < dataOut.data.length; i++) {
+                    //                 $("#infoData").html((index, content) => {
+                    //                     return content + ` <form action="/toaa/editdata" method = "post" enctype = "multipart/form-data" class="info">
+                    //                                         <input name="id" value="${dataIn[i].id}" hidden = "true">
+                    //                                           <label class="col-2" > ${dataIn[i].description}  </label>
+                    //                                           <input class="col-10" type = "text" name = "data" value= "${dataIn[i].data}" />
+                    //                                         <button class="col-2 button" type = "submit" > تغيير المحتوى </button>
+                    //                                       </form>
+                    //                                       `});
+                    //             }
+                    //         }
+                    //         else if (dataOut.result == "ERROR")
+                    //             alert(data.Message);
+                    //     },
+                    //     error: function (err) {
+                    //         alert("Something Went Wrong!");
+                    //     }
+                    // })
+
+                    var table = $("#ToaaFilesTable").dataTable({
+                        "processing": true, // for show progress bar
+                        "serverSide": true, // for process server side
+                        "filter": false, // this is for disable filter (search box)
+                        "orderMulti": false, // for disable multiple column at once
+                        "dom": 'Bfrtip',
+                        "ajax": {
+                            "url": "/toaa/basicDataFiles",
+                            "type": "POST",
+                            // "datatype": "json"
+                        },
+                        "columns": [
+                            // { "data": "id", "name": "id", "autoWidth": true },
+                            // { "data": "fileType", "name": "fileType", "autoWidth": true },
+                            { "data": "fileNameAr", "name": "fileNameAr", "autoWidth": true },
+                            // { "data": "fileNameEn", "name": "fileNameEn", "autoWidth": true },
+                            {
+                                data: null, orderable: false, render: function (data, type, row) { //show and download
+                                    return '<div class="floatRight d-flex"> <a class="btn btn-xs btn-warning BoxIconColor-brownD d-flex" target="_blank" href="/toaa/DownFile?AttId=  ' + row.id + '" > <i class="fa fa-download align-items-center"></i> تحميل الملف </a></div><div class="clear"></div>'
+                                },
+                            }, {
+                                data: null, render: function (data, type, row) {
+                                    return '<a href="#" data-toggle="modal" data-target="#notpopUp" onclick="DisplayImage(\'' + row.id + '\')"><img src="/toaa/ShowFile?AttId=  ' + row.id + '" alt="" /></a>'
+                                },
+                            },
+                            {
+                                data: null, orderable: false, render: function (data, type, row) { //delete and update button
+                                    // <div class='btn-group project-list-action'><button class='btn btn-danger btn-xs' onclick=Delete(${row.id}) > <i class='fa fa-close'></i> حذف </button> </div>
+                                    if (@HttpContextAccessor.HttpContext.Session.GetString("Role") == "1") {
+                                        return `
+                                             <button class='btn btn-info btn-xs' data-toggle='modal' data-target='#EditModal' onclick="EditData('${row.id}','${row.fileNameAr}','${row.fileNameEn}')"> \
+                                      <i class='fa fa-pencil' > </i> تعديل</button > `}
+                                      else return `<p> برجاء الاتصال بالادمن للتعديل </p>`
+                                }
+                            }
+                        ],
+                        buttons: [
+                            {
+                                extend: 'collection',
+                                text: 'Export',
+                                buttons: [
+                                    'copy',
+                                    'excel',
+                                ]
+                            }
+                        ]
+                    });
+                }
+            });
+            
+        });
+        function EditData(ItemId, NameAr, NameEn) {
+            $("#AttachmentId").val(`${ItemId}`);
+            $("#EditNameAr").val(`${NameAr}`);
+            $("#EditNameEn").val(`${NameEn}`);
+            if ($("#DocumentNameEn").val() == "null") {
+                $("#DocumentNameEn").val("");
+            }
+        }
+        function EditFile() {
+            $('#loadingDiv').show();
+            var file = document.getElementById("EditFile").files[0];
+            var fileLength = document.getElementById("EditFile").files.length;
+
+            if ($("#EditNameAr").val() == "") {
+                alert("من فضلك ادخل اسم القسم العربى")
+                return;
+            }
+            if (fileLength > 0) {
+                if (file.size > 20971520) //20 MB
+                {
+                    alert("حجم الملف لا يجب أن يكون أكبر من 20 ميجا بايت")
+                    return;
+                }
+
+            }
+            var id = $("#AttachmentId").val();
+            var NameAr = $("#EditNameAr").val();
+            var NameEn = $("#EditNameEn").val();
+            var data = new FormData();
+            data.append("fileContent", file);
+            data.append("fileNameAr", NameAr);
+            data.append("fileNameEn", NameEn);
+            data.append("id", id);
+            $.ajax({
+                url: '/toaa/editFiles',
+                type: 'POST',
+                data: data,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    if (data.result == "OK") {
+                        $('#EditModal').modal('hide');
+                        oTable = $('#ToaaFilesTable').DataTable();
+                        oTable.draw();
+                    }
+                    else if (data.result == "Erorr")
+                        alert(data.Message);
+                }
+            });
+        }
+    
+    </script>
+    }

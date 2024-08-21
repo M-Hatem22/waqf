@@ -1,0 +1,142 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Http
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["AboutUs"];
+}
+
+
+<!-- Content -->
+<div class="content-wrapper">
+    <!-- Lines -->
+    <section class="content-lines-wrapper">
+        <div class="content-lines-inner">
+            <div class="content-lines"></div>
+        </div>
+    </section>
+    <!-- Header Banner -->
+    <section class="banner-header banner-img valign bg-img bg-fixed bgBanner" data-overlay-light="3"
+             data-background="~/img/banner.jpg">
+        <!-- Left Panel -->
+        <div class="left-panel"></div>
+    </section>
+    <!-- About -->
+    <section class="about section-padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
+                    <h2 class="section-title">@Localizer["Who"] <span>@Localizer["WeAre"] </span></h2>
+                    <p>
+                        @Localizer["WhoAreWe"];
+                    </p>
+                </div>
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
+                    <div class="about-img">
+                        <div class="img"> <img src="~/img/about.jpg" class="img-fluid" alt=""> </div>
+                        <div class="about-img-2 about-buro">@Localizer["photoTitleHome"]</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+
+                <div class="col-md-12 mb-30 animate-box" data-animate-effect="fadeInUp">
+                    <div>
+                        <h2 class="section-title title-sm"> <span>@Localizer["Mission"]</span></h2>
+                        <p>
+                            @Localizer["OurMission"];
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients -->
+    <section class="clients about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 animate-box" data-animate-effect="fadeInUp">
+                    <div class="about-img">
+                        <div class="img"> <img src="~/img/fac.png" class="img-fluid" alt=""> </div>
+                        <div class="about-img-2 about-buro">@Localizer["photoTitleHome"]</div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
+                    <h3 class="section-title">@Localizer["Our"] <span>@Localizer["STRENGTH"] </span></h3>
+                    <p>
+                        @Localizer["STRENGTHDetails"];
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services section-padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                    <h2 class="section-title"><span>@Localizer["OurServices"]</span></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="item">
+                        <a href="urban-design.cshtml">
+                            <img src="~/img/icons/icon-1.png" alt="">
+                            <!-- <h5>Urban Design</h5> -->
+                            <div class="line"></div>
+                            <p>
+                                @Localizer["FirstService"]
+                            </p>
+                            <div class="numb">01</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="item">
+                        <a href="planning.cshtml">
+                            <img src="~/img/icons/icon-2.png" alt="">
+                            <!-- <h5>Planing</h5> -->
+                            <div class="line"></div>
+                            <p>@Localizer["SecondService"]</p>
+                            <div class="numb">02</div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="item">
+                        <a href="decor-plan.cshtml">
+                            <img src="~/img/icons/icon-3.png" alt="">
+                            <!-- <h5>Decor Plan</h5> -->
+                            <div class="line"></div>
+                            <p>
+                                @Localizer["ThirdService"]
+                            </p>
+                            <div class="numb">03</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="item">
+                        <a href="decor-plan.cshtml">
+                            <img src="~/img/icons/icon-4.png" alt="">
+                            <!-- <h5>Decor Plan</h5> -->
+                            <div class="line"></div>
+                            <p>
+                                @Localizer["FourthService"]
+                            </p>
+                            <div class="numb">04</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+</div>

@@ -1,0 +1,64 @@
+﻿@model EgyvisionVS.Models.SliderComponentVM;
+
+
+<div class="slidecontent">
+    <div class="infoslider">
+        <div class="img-title-des">
+            <div class="imgslider wow zoomInDown btn-1" data-wow-delay="1s">
+                <span>
+                    <div class="owl-carousel  owl-carousel-imgslides  ken-carousel owl-theme" id="c2">
+                        @foreach (var item in Model.SubSliders)
+                        {
+                            var base64 = Convert.ToBase64String(item.AttachmentFile);
+                            var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                            <div class="item" style="width:auto !important;height:100% !important;">
+                                <img style="width:auto !important;height:100% !important;" src=@imgSrc>
+                            </div>
+                        }
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<header>
+    <div class="owl-demo">
+        <!-- <div class="slide-progress"></div> -->
+        <div class="owl-carousel owl-carousel-slider ken-carousel owl-theme" id="c1">
+            @foreach (var item in Model.MainSliders)
+            {
+                var base64 = Convert.ToBase64String(item.AttachmentFile);
+                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                <div class="item">
+                    <img src=@imgSrc class="imgitem d-block d-md-none">
+                    <img src=@imgSrc class="imgitem d-none d-md-block" alt="images not found" />
+                    <div class="cover">
+                        <div class="">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="header-content text-center m-auto Caption">
+                                        <div class="Slidimg text-left box">
+                                            <h1 class="d-inline  ml2 ">
+                                                @item.SliderTitleEn
+                                            </h1>
+                                        </div>
+                                        <div class="my-4 mx-0 text-left see_projects">
+                                            <a href="/Home/Projects"
+                                               class="button smoke start_shopping btn btn-sm border-white rounded-0 transparent Check_out ml-auto my-2 px-lg-4 px-md-4 text-white  wow slideInUp" data-wow-delay="3.5s" data-wow-duration="0.7s">See The Projects</a>
+                                        </div>
+                                    </div>
+                                    <div class="skip text-white">
+                                        <a href="#info" class="text-white">
+                                            <div class="reverse_border bg-white mb-4"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--================Header Area =================-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</header>

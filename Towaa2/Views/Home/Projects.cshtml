@@ -1,0 +1,173 @@
+﻿@using Microsoft.AspNetCore.Http
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+<!-- Navbar & Carousel Start -->
+<div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="/Home/Index" class="navbar-brand p-0 logo">
+            <img src="/home/getLogo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="/Home/Index" class="nav-item nav-link">الرئيسية</a>
+                <a href="/Home/about" class="nav-item nav-link">من نحن</a>
+                @*                    <a href="/Home/BoarDirectors" class="nav-item nav-link">مجلس الإدارة</a>
+                *@                    <a href="@ViewBag.StoreUrl" class="nav-item nav-link active">مشاريعنا </a>
+                <a href="/Home/Governance" class="nav-item nav-link">الحوكمة</a>
+                <a href="/Home/BankAccounts" class="nav-item nav-link">حساباتنا البنكية</a>
+                <a href="/Home/MediaCenter" class="nav-item nav-link">المركز الاعلامي</a>
+                <a href="/Home/CustomerReviews" class="nav-item nav-link">قياس الرضا</a>
+                <a href="/Home/Contact" class="nav-item nav-link">تواصل معنا</a>
+            </div>
+            <a href="@ViewBag.StoreUrl" target="_blank" class="btn btn-primary ">تبرع الأن</a>
+            <a href="#" class="visionLogo py-2 px-4"><img src="~/img/NewLogo.jpeg" /></a>
+
+        </div>
+    </nav>
+    <div class="container-fluid bg-primary py-5 bg-header">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">مشاريعنا
+            </h1>
+            <a href="" class="h5 text-white">الرئيسية</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="" class="h5 text-white">مشاريعنا
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Navbar & Carousel End -->
+
+
+
+    <!-- Service Start -->
+    <div class="container-fluid py-5 wow fadeInUp projectsBox" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h5 class="fw-bold text-primary text-uppercase">شارك - تطوع - اعمل
+                </h5>
+                <h1 class="mb-0">شاركنا فى اعمالناالخيرية</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-braille text-white"></i>
+                        </div>
+                        <h4 class="">وقف الفقيد </h4>
+                        <p class="m-0">تبرع الأن</p>
+                        <a class="btn btn-lg btn-primary rounded" href="https://www.towaaorg.com/" target="_blank">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-braille text-white"></i>
+                        </div>
+                        <h4 class="">كفالة ثلاجة ماء</h4>
+                        <p class="m-0">تبرع الأن</p>
+                        <a class="btn btn-lg btn-primary rounded" href="https://www.towaaorg.com/" target="_blank">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-braille text-white"></i>
+                        </div>
+                        <h4 class="">سقيا الماء في البلد الحرام </h4>
+                        <p class="m-0">تبرع الأن</p>
+                        <a class="btn btn-lg btn-primary rounded" href="https://www.towaaorg.com/" target="_blank">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-braille text-white"></i>
+                        </div>
+                        <h4 class="">سقيا الاسر </h4>
+                        <p class="m-0">تبرع الأن</p>
+                        <a class="btn btn-lg btn-primary rounded" href="https://www.towaaorg.com/" target="_blank">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-braille text-white"></i>
+                        </div>
+                        <h4 class="">سقيا مرضى مكة </h4>
+                        <p class="m-0">تبرع الأن</p>
+                        <a class="btn btn-lg btn-primary rounded" href="https://www.towaaorg.com/" target="_blank">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-braille text-white"></i>
+                        </div>
+                        <h4 class="">مشروع الصدقة الجارية </h4>
+                        <p class="m-0">تبرع الأن</p>
+                        <a class="btn btn-lg btn-primary rounded" href="https://www.towaaorg.com/" target="_blank">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-braille text-white"></i>
+                        </div>
+                        <h4 class="">نهر الحسنات </h4>
+                        <p class="m-0">تبرع الأن</p>
+                        <a class="btn btn-lg btn-primary rounded" href="https://www.towaaorg.com/" target="_blank">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-braille text-white"></i>
+                        </div>
+                        <h4 class="">سقيا ضيوف الرحمن </h4>
+                        <p class="m-0">تبرع الأن</p>
+                        <a class="btn btn-lg btn-primary rounded" href="https://www.towaaorg.com/" target="_blank">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>   
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-braille text-white"></i>
+                        </div>
+                        <h4 class="">وقف سقيا البلد الأمين </h4>                        <p class="m-0">تبرع الأن</p>
+                        <a class="btn btn-lg btn-primary rounded" href="https://www.towaaorg.com/" target="_blank">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>                              
+
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->

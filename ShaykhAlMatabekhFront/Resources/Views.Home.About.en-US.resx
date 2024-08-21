@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbhaMall" xml:space="preserve">
+    <value>Abha Mall</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="Coffeeshops" xml:space="preserve">
+    <value>Coffee shops</value>
+  </data>
+  <data name="CompletingtheWorkWithTheRequiredQualityandTime" xml:space="preserve">
+    <value>Completing the work with the required quality and time</value>
+  </data>
+  <data name="FirstService" xml:space="preserve">
+    <value>We offer the best to premium homeowners and commercial industries Custom kitchens and cabinets</value>
+  </data>
+  <data name="FourthService" xml:space="preserve">
+    <value>We offer a wide range of products that satisfy different tastes, from classic to modern to bespoke design</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>Home Page</value>
+  </data>
+  <data name="HugeProjectsinSaudiArabia" xml:space="preserve">
+    <value>Huge Projects in Saudi Arabia</value>
+  </data>
+  <data name="Mission" xml:space="preserve">
+    <value>MISSION AND GOALS</value>
+  </data>
+  <data name="Our" xml:space="preserve">
+    <value>Our</value>
+  </data>
+  <data name="OurMission" xml:space="preserve">
+    <value>Always Satisfying, We at Sheikh Kitchens strive to provide our customers with a variety of kitchen design solutions and high quality products. &lt;br&gt; 
+Modern, timely and wide - diverse appeal, our collections range from modern to classic designs and take into account the differences in each and everyone's lifestyle. &lt;br&gt; &lt;br&gt;
+Our goal is to provide exceptional quality and professional services that preserve our legacy while embodying the future</value>
+  </data>
+  <data name="OurProjects" xml:space="preserve">
+    <value>Our Projects</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>Our Services</value>
+  </data>
+  <data name="OurServicesDetails" xml:space="preserve">
+    <value>-	Implementation of construction and finishing works for commercial and residential buildings
+-	Implementation of the construction and finishing of industrial facilities
+-	Implementation of the construction and finishing of investment projects (hospitals - malls - administrative buildings - complexes)
+-Implementation of infrastructure works</value>
+  </data>
+  <data name="OurVision" xml:space="preserve">
+    <value>Seeking to raise productivity and expand areas of work
+Ensuring that the works are carried out with the highest quality and the required time
+Work to contribute to the Emiratization of jobs for Saudis, especially administrative ones
+Work on the development of work performance and implementation by modern methods to obtain quality and shorten the time of implementation and
+Keeping abreast of the development in the Kingdom according to Vision 2030</value>
+  </data>
+  <data name="photoTitleHome" xml:space="preserve">
+    <value>SHEIKH KITCHENS</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>Projects</value>
+  </data>
+  <data name="SecondService" xml:space="preserve">
+    <value>New designs and items are constantly developed by our talented designers to bring innovation to different styles of kitchens and cabinets.</value>
+  </data>
+  <data name="ShowProjects" xml:space="preserve">
+    <value>Show Projects</value>
+  </data>
+  <data name="STRENGTH" xml:space="preserve">
+    <value>OUR ANATOMY CAPACITY &amp; STRENGTH</value>
+  </data>
+  <data name="STRENGTHDetails" xml:space="preserve">
+    <value>Al Sheikh Kitchens is one of the largest manufacturers of fitted kitchens and cabinets in the Kingdom of Saudi Arabia. In addition to its headquarters in Riyadh, the company has its own production facilities and showrooms throughout the Kingdom. From small carpentry the day it started, today the company employs more than 396 employees within its manpower. &lt;br&gt;&lt;br&gt;
+
+Quality, design and innovation are just our main goal so we have developed a company structure that can guarantee the best service to our customers. From our main management department to our production plant to our outstanding showrooms, we have earned a high level of brand recognition and sympathy due to our long tradition and commitment to excellence.</value>
+  </data>
+  <data name="ThirdService" xml:space="preserve">
+    <value>We are always up to date with new trends affecting the world of kitchens and related technologies.</value>
+  </data>
+  <data name="ThirdServiceDetails" xml:space="preserve">
+    <value>(hospitals - malls - administrative buildings - complexes)</value>
+  </data>
+  <data name="ViewPromoVideo" xml:space="preserve">
+    <value>View Promo Video</value>
+  </data>
+  <data name="Vision" xml:space="preserve">
+    <value>Vision</value>
+  </data>
+  <data name="WeAre" xml:space="preserve">
+    <value>We Are ??</value>
+  </data>
+  <data name="WeKeenToProvideTheBest" xml:space="preserve">
+    <value>We Keen To Provide The Best</value>
+  </data>
+  <data name="Who" xml:space="preserve">
+    <value>Who</value>
+  </data>
+  <data name="WhoAreWe" xml:space="preserve">
+    <value>The company was founded in 1986 in the heart In Saudi Arabia, Sheikh Kitchens is the oldest name in the kitchen and joints industry. Banking on decades of family heritage, we've followed Steps of our great organization.
+&lt;br&gt;&lt;br&gt;
+Sheikh Kitchens is a dynamic, innovative and unwavering company Commitment to using its extensive technical and industry knowledge to achieve Complete customer satisfaction.
+Focusing on achieving our ambitious goals and striving to achieve our ambition Plans, Sheikh Kitchens is a team that works closely with designers and architects International reputation in providing all kinds of custom solutions Customized work environments, in addition to our standard products.</value>
+  </data>
+</root>

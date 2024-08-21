@@ -1,0 +1,589 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcome-list shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="breadcome-heading">
+                                <h2>مرحبا بك فى ATMA</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="breadcome-menu">
+                                <li>
+                                    <a asp-controller="Home" asp-action="Index">الرئيسية</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li>
+                                    <span class="bread-blod">المشاريع </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!--  System Start-->
+<div class="basic-form-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <!---- tab ----->
+
+                <div class="sparkline9-list shadow-reset mg-b-30">
+                    <div class="sparkline9-hd">
+                        <div class="main-sparkline9-hd">
+                            <h1>ملفات المستفيدين</h1>
+                            
+                                    @if (@HttpContextAccessor.HttpContext.Session.GetString("Role") == "1")
+                                    {
+                                <div class="sparkline9-outline-icon">
+                                    <div >
+                                        <button type="button" class="Additme btn-custon-four btn-warning btn-xs" data-toggle='modal' data-target='#AddTypeModal' id="ADD">
+                                            <span class="fa fa-pencil">إضافة نوع ملف</span>
+                                        </button>
+                                        <span class="sparkline9-collapse-link">
+                                            <i class="fa fa-chevron-up"></i>
+                                        </span>
+
+                                    </div>
+                                    
+                                <div >
+                                    <button type="button" class="Additme btn-custon-four btn-warning btn-xs" data-toggle='modal' data-target='#AddModal' id="ADD">
+                                          <span class="fa fa-pencil">إضافة ملف</span>
+                                    </button>
+                                   
+                                </div>
+                               
+                                </div>
+                                    }
+                                
+                        </div>
+                    </div>
+                    <div class="sparkline9-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <div id="toolbar">
+                            </div>
+                            <table id="GovernanceTable" data-toggle="table" data-pagination="true" data-search="false" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true"
+                                   data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true"
+                                   data-toolbar="#toolbar">
+                                <thead>
+                                    <tr>
+                                        <th data-field="GovernanceAttachmentsId">ID</th>
+                                        <th data-field="LkGovernanceNameAr">نوع الملف </th>
+                                        <th data-field="GovernanceAttachmentsNameAr">الإسم عربي</th>
+                                        <th data-field="GovernanceAttachmentsNameEn">الإسم إنجليزي </th>
+                                        <th>العرض </th>
+                                        <th>الزائرين</th>
+                                        <th data-field="action">الاوامر</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!--- End tab --->
+            </div>
+        </div>
+    </div>
+</div>
+<!--  System end-->
+<!-- Modal Add-->
+<div class="modal" id="AddModal">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">إضافة ملف</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <input type="hidden" id="DepartmentId" />
+                            <label>الإسم بالعربي</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="AddNameAr" placeholder=" الإسم بالعربي	">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <label>الإسم بالإنجليزي</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="AddNameEn" placeholder=" الإسم بالإنجليزي	">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <label>نوع الملف</label>
+                            <div class="form-input-area">
+                                <select class="form-control custom-select-value" id="Governance"></select>
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner ">
+                            <label>إختار الملف</label>
+                            <div class="file-upload-inner ts-forms">
+                                <div class="input prepend-small-btn">
+                                    <div class="file-button">
+                                        تحميل <input type="file" id="fileTable" name="fileTables" onchange="document.getElementById('Att').value = this.value;" class="valid" aria-invalid="false">
+                                    </div>
+                                    <input type="text" id="Att" placeholder="تحميل المستند" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="AddGovernance()">Save </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal" id="AddTypeModal">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">إضافة نوع ملف</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            @* <input type="hidden" id="DepartmentId" /> *@
+                            <label>الإسم بالعربي</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="AddTypeNameAr" placeholder=" الإسم بالعربي	">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <label>الإسم بالإنجليزي</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="AdTypedNameEn" placeholder=" الإسم بالإنجليزي	">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="AddGovernanceType()">Save </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal" id="ModalViewers">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header">
+                @* <h5 class="modal-title">من قام بفتح الملف</h5> *@
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row" id="modalView">
+                    <div class="col-md-6 col-sm-12">
+                        <div >
+                            <label>ايميل المستخدم</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="userMail" placeholder=" ايميل المستخدم">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <label>التاريخ و الوقت</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="viewDateTime" placeholder=" التاريخ و الوقت">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <label>نوع الملف</label>
+                            <div class="form-input-area">
+                                <select class="form-control custom-select-value" id="Governance"></select>
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" id="modalDownload">
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        var governancedata = [];
+        $(document).ready(function() {
+            var table = $("#GovernanceTable").dataTable({
+                "processing": true, // for show progress bar
+                "serverSide": true, // for process server side
+                "filter": false, // this is for disable filter (search box)
+                "orderMulti": false, // for disable multiple column at once,
+                "search":false,
+                "dom": 'Bfrtip',
+                "ajax": {
+                    "url": "/Governance/LoadGovernanceAttachment",
+                    "type": "POST",
+                    // "datatype": "json"
+                },
+                "columns": [
+                    { "data": "governanceAttachmentsId", "name": "governanceAttachmentsId", "autoWidth": true },
+                    { "data": "lkGovernanceNameAr", "name": "lkGovernanceNameAr", "autoWidth": true },
+                    { "data": "governanceAttachmentsNameAr", "name": "governanceAttachmentsNameAr", "autoWidth": true },
+                    { "data": "governanceAttachmentsNameEn", "name": "governanceAttachmentsNameEn", "autoWidth": true },
+                    {
+                        data: null, orderable: false, render: function(data, type, row) {
+                            if (@HttpContextAccessor.HttpContext.Session.GetString("Role") == "1") 
+                            {
+                                return '<div class="floatRight"><a class="btn btn-xs btn-warning BoxIconColor-grey" target="_blank" href="/Governance/ShowGovernanceyAtt?AttId=  ' + row.governanceAttachmentsId + '"   ><i class="fa fa-file-text"></i> "' + row.attachmentName + '"  </a> </div><div class="floatLeft"> <a class="btn btn-xs btn-warning BoxIconColor-brownD" target="_blank" href="/Governance/DownGovernanceAtt?AttId=  ' + row.governanceAttachmentsId + '" > <i class="fa fa-download"></i> تحميل الملف </a></div><div class="clear"></div>'
+                            } else { return '<div class="floatRight"><a class="btn btn-xs btn-warning BoxIconColor-grey" target="_blank" href="/Governance/ShowGovernanceyAtt?AttId=  ' + row.governanceAttachmentsId + '"   ><i class="fa fa-file-text"></i> "' + row.attachmentName + '"  </a> </div><div class="floatLeft">' }
+                           
+                        },
+                    },
+                    {
+                        data: null, orderable: false, render: function (data, type, row) { 
+                            if (@HttpContextAccessor.HttpContext.Session.GetString("Role") == "1") {
+                                return '<button type="button" class="Additme btn-custon-four btn-warning btn-xs" data-toggle="modal" data-target="#ModalViewers" data-whatever="' + row.governanceAttachmentsId + '" id = "fileModal" > عرض زوار الملف </button>'
+                            }
+                            else { return '<p>برجاء الاتصال بالادمن للعرض</p>' }
+                        }
+                    },
+                    {
+                        data: null, orderable: false, render: function(data, type, row) {
+                            if (@HttpContextAccessor.HttpContext.Session.GetString("Role") == "1") {
+                                return `<div class='btn-group project-list-action'><button class='btn btn-danger btn-xs' onclick=Delete(${row.governanceAttachmentsId}) > <i class='fa fa-close'></i> حذف </button> </div>`;
+                            } else {return `<p>برجاء الاتصال بالادمن للتعديل</p>` }
+                            //\ <button class='btn btn-info btn-xs' data-toggle='modal' data-target='#EditModal' onclick="EditData('${row.governanceAttachmentsId}','${row.LKDocumentsTypeAr}','${row.LKDocumentsTypeEn}')"> \
+                            //                                                   <i class='fa fa-pencil'></i> تعديل</button>
+                        }
+                    }
+                ],
+                buttons: [
+                    {
+                        extend: 'collection',
+                        text: 'Export',
+                        buttons: [
+                            'copy',
+                            'excel',
+                        ]
+                    }
+                ]
+            });
+            $('#ModalViewers').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget) // Button that triggered the modal
+                var recipient = button.data('whatever') // Extract info from data-* attributes
+                
+                $.ajax({
+                    url: '/Governance/viewList?fileid=' + recipient,
+                    type: "GET",
+                    success: function (data) {
+                        if (data.result == "OK") {
+                            $("#modalView").html("");
+                            $("#modalDownload").html("<h5 class='modal-title'>من قام بتحميل الملف</h5>")
+                            console.log(data)
+                            var countSeen = 0;
+                            var countDownload = 0 ;
+                            for (var i = 0; i < data.data.length; i++) 
+                            {
+                                if (data.data[i].lastDownload == null) countSeen++ ;
+                                else { countDownload++ ; }
+                            }
+                            if (countSeen === 0) {
+                                $("#modalView").html("<h3 class='modal-title'>لم يقم احد بفتح الملف</h3>");
+                            } else { $("#modalView").html("<h3 class='modal-title'>من قام بفتح الملف</h3>"); }
+                            if (countDownload == 0) {
+                                $("#modalDownload").html("<h3 class='modal-title'>لم يقم احد بتحميل الملف</h3>");
+                            }else{
+                                $("#modalDownload").html("<h3 class='modal-title'>من قام بتحميل الملف</h3>");
+                            }
+                            for (var i = 0; i < data.data.length; i++) {
+                                if (data.data[i].lastDownload == null) 
+                                {
+                                    $("#modalView").html((index, content) => {
+
+                                        return content + ` <div class="col-md-6 col-sm-12">
+                                <div >
+                                    <label>ايميل المستخدم</label>
+                                    <div class="form-input-area">
+                                    <input type="text" class="form-control" id="userMail" disabled="true" value="${data.data[i].userMail}" placeholder=" ايميل المستخدم">
+                                        <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="form-group-inner">
+                                    <label>التاريخ و الوقت</label>
+                                    <div class="form-input-area">
+                                                                        <input type="text" class="form-control" id="viewDateTime"  disabled="true" value="${data.data[i].lastView}" placeholder=" التاريخ و الوقت">
+                                        <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                                                          `
+                                    });
+                                }
+                                else 
+                                {
+
+                                    $("#modalDownload").html((index, content) => {
+
+                                        return content + ` <div class="col-md-6 col-sm-12">
+                                        <div >
+                                            <label>ايميل المستخدم</label>
+                                            <div class="form-input-area">
+                                            <input type="text" class="form-control" id="userMail" disabled="true" value="${data.data[i].userMail}" placeholder=" ايميل المستخدم">
+                                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <div class="form-group-inner">
+                                            <label>التاريخ و الوقت</label>
+                                            <div class="form-input-area">
+                                                                                <input type="text" class="form-control" id="viewDateTime"  disabled="true" value="${data.data[i].lastView}" placeholder=" التاريخ و الوقت">
+                                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                  `
+                                    });
+
+                                }
+                            }
+                        }
+                        else if (data.result == "Erorr")
+                            alert(data.Message);
+                    },
+                    error: function (err) {
+                        alert("Something Went Wrong!...");
+                    }
+                });
+                var modal = $(this)
+                //modal.find('.modal-title').text('New message to ' + recipient)
+                //modal.find('.modal-body input').val(recipient)
+            })
+            $('#GovernanceTable_filter input').hide();
+            $('#ADD').click(function() {
+                $('#AddNameAr').val("")
+                $('#AddNameEn').val("");
+                $('#Governance').children().remove();
+                if (governancedata.length > 0) {
+                    for (var i = 0; i < governancedata.length; i++) {
+                        $("#Governance").append('<option value="' + governancedata[i].lkGovernanceId + '">' + governancedata[i].lkGovernanceNameAr + '</option>');
+                    }
+                    $('#Governance').val(-1);
+                }
+                else {
+                    $.ajax({
+                        url: '/Governance/GetGovernance',
+                        type: 'GET',
+                        success: function(data) {
+                            governancedata = data.data;
+                            if (data.result == "OK") {
+                                for (var i = 0; i < governancedata.length; i++) {
+                                    $("#Governance").append('<option value="' + governancedata[i].lkGovernanceId + '">' + governancedata[i].lkGovernanceNameAr + '</option>');
+                                }
+                                $('#Governance').val(-1);
+                            }
+                            else if (data.result == "ERROR")
+                                alert(data.Message);
+                        },
+                        error: function(err) {
+                            alert("Something Went Wrong!");
+                        }
+                    });
+                };
+            });
+        });
+        function Delete(ItemId) {
+            if (confirm("Are you want to delete ...?")) {
+                $.ajax({
+                    url: '/Governance/DeleteGovernancee?ID=' + ItemId,
+                    type: "GET",
+                    success: function(data) {
+                        if (data.result == "OK") {
+                            oTable = $('#GovernanceTable').DataTable();
+                            oTable.draw();
+                        }
+                        else if (data.result == "Erorr")
+                            alert(data.Message);
+                    },
+                    error: function(err) {
+                        alert("Something Went Wrong!...");
+                    }
+                });
+            }
+            else {
+                return false;
+            }
+        }
+        function EditData(ItemId, NameAr, NameEn) {
+            $("#DocumentId").val(`${ItemId}`);
+            $("#DocumentNameAr").val(`${NameAr}`);
+            $("#DocumentNameEn").val(`${NameEn}`);
+            if ($("#DocumentNameEn").val() == "null") {
+                $("#DocumentNameEn").val("");
+            }
+        }
+        function UpdateData() {
+            if ($("#DocumentNameAr").val() == "") {
+                alert("من فضلك ادخل إسم الوثيقة العربي")
+                return;
+            }
+            var id = $("#DocumentId").val();
+            var NameAr = $("#DocumentNameAr").val();
+            var NameEn = $("#DocumentNameEn").val();
+            var DocumentData = {
+                "LKDocumentsTypeId": id,
+                "LKDocumentsTypeAr": NameAr,
+                "LKDocumentsTypeEn": NameEn
+            };
+            $.ajax({
+                url: '/HR/DocumentsTypes/Edit',
+                type: 'POST',
+                data: DocumentData,
+                success: function(data) {
+                    if (data.result == "OK") {
+                        $('#EditModal').modal('hide');
+                        oTable = $('#DocumentsTypesTable').DataTable();
+                        oTable.draw();
+                    }
+                    else if (data.result == "Erorr")
+                        alert(data.Message);
+                }
+            });
+        }
+        function AddGovernance() {
+            var file = document.getElementById("fileTable").files[0];
+            var fileLength = document.getElementById("fileTable").files.length;
+
+            if ($("#AddNameAr").val() == "") {
+                alert("من فضلك ادخل اسم القسم العربى")
+                return;
+            }
+            if ($("#Governance").val() == "" || $("#Governance").val() == -1) {
+                alert("من فضلك أختار نوع الملف")
+                return;
+            }
+            if (fileLength == 0) {
+                alert("من فضلك قم برفع ملف")
+                return;
+            }
+            if (fileLength > 0) {
+                if (file.size > 20971520) //20 MB
+                {
+                    alert("حجم الملف لا يجب أن يكون أكبر من 20 ميجا بايت")
+                    return;
+                }
+
+            }
+
+            var NameAr = $("#AddNameAr").val();
+            var NameEn = $("#AddNameEn").val();
+            var Gov = $("#Governance").val();
+            var GovText = $("#Governance option:selected").text();
+
+
+            var data = new FormData();
+            data.append("FileUpload", file);
+            data.append("GovernanceAttachmentsNameAr", NameAr);
+            data.append("GovernanceAttachmentsNameEn", NameEn);
+            data.append("LkGovernanceId", Gov);
+            data.append("LkGovernanceNameAr", GovText);
+            $.ajax({
+                url: '/Governance/CreateGovernance',
+                data: data,
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    if (data.result == "OK") {
+                        $('#AddModal').modal('hide');
+                        oTable = $('#GovernanceTable').DataTable();
+                        oTable.draw();
+                    }
+                    else if (data.result == "ERROR")
+                        alert(data.Message);
+                },
+                error: function(err) {
+                    alert("Something Went Wrong!...");
+                }
+            });
+        }
+        function AddGovernanceType() {
+            var NameAr = $("#AddTypeNameAr").val();
+            var NameEn = $("#AddTypeNameEn").val();
+            if ($("#AddTypeNameAr").val() == "") {
+                alert("من فضلك ادخل اسم القسم العربى")
+                return;
+            }
+            var data = new FormData();
+            data.append("LkGovernanceNameAr", NameAr);
+            data.append("LkGovernanceNameEn", NameEn);
+            $.ajax({
+                url: '/Governance/CreateGovernanceType',
+                data: data,
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    if (data.result == "OK") {
+                        $('#AddTypeModal').modal('hide');
+                    }
+                    else if (data.result == "ERROR")
+                        alert(data.Message);
+                },
+                error: function (err) {
+                    alert("Something Went Wrong!...");
+                }
+            });
+        }
+
+    </script>
+}

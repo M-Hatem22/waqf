@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Egyvision</title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico"/>
+    <environment include="Development">
+       
+        @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />*@
+        <!-- Bootstrap CSS -->
+        <!-- <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css"
+    integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="~/css/bootstrap.min.css" type="text/css" />
+        <!--fontAwsome-->
+        <link rel="stylesheet" href="~/fontawesome/css/all.min.css" type="text/css" />
+        <!-- CSS Style -->
+        <link rel="stylesheet" href="~/css/style.css">
+        <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="~/css/animate.css" />
+        <link rel="stylesheet" href="~/css/main.css">
+        <!---pre-loader-->
+        <link rel="stylesheet" href="~/css/preloader/main.css" />
+
+    </environment>
+    <environment exclude="Development">
+        @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+            asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+            crossorigin="anonymous"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>*@
+    </environment>
+    <environment include="Production">
+        @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />*@
+        <!-- Bootstrap CSS -->
+        <!-- <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css"
+        integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous"> -->
+        <link rel="stylesheet" href="~/css/bootstrap.min.css" type="text/css" />
+        <!--fontAwsome-->
+        <link rel="stylesheet" href="~/fontawesome/css/all.min.css" type="text/css" />
+        <!-- CSS Style -->
+        <link rel="stylesheet" href="~/css/style.css">
+        <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="~/css/animate.css" />
+        <link rel="stylesheet" href="~/css/main.css">
+        <!---pre-loader-->
+        <link rel="stylesheet" href="~/css/preloader/main.css" />
+
+    </environment>
+    <environment exclude="Production">
+        @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+            asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+            crossorigin="anonymous"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>*@
+    </environment>
+    @*<link rel="stylesheet" href="~/css/site.css" />*@
+</head>
+<body class="primary">
+    <div id="loader-wrapper">
+        <div class="loader-img">
+            <img src="~/images/Logo-2.png" />
+            <div class="square-spinner"></div>
+            <div class="dot-loader"></div>
+            <div class="dot-loader"></div>
+            <div class="dot-loader"></div>
+        </div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+
+    @*<partial name="_CookieConsentPartial" />*@
+    <main role="main" class="">
+        @RenderBody()
+    </main>
+
+    <!--button backtotop-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fas fa-angle-double-up"></i></button>
+
+
+    <!---Modal-->
+    <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <img src="" id="image-gallery-image" class="img-responsive" style="width: 100%;">
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary float-left" id="show-previous-image">
+                        <i class="fa fa-arrow-left"></i>
+                    </button>
+
+                    <button type="button" id="show-next-image" class="btn btn-secondary float-right">
+                        <i class="fa fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <environment exclude="Development">
+        @*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>*@
+        @*<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>*@
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    </environment>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/fontawesome/js/all.min.js"></script>
+        <script src="~/js/owl.carousel.min.js"></script>
+        <!-- <script src="js/canvas.js"></script> -->
+        <script src="~/js/index.js"></script>
+        <script src="~/js/wow.min.js"></script>
+        <script src="~/js/particles.js"></script>
+        <script src="~/js/app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+        <script>
+            new WOW().init();
+        </script>
+        <script>
+            $(document).ready(function () {
+                setTimeout(function () {
+                    $("body").addClass("loaded");
+                    $("#loader-wrapper img").hide("slow");
+                    $(".dot-loader").hide("slow");
+                }, 3000);
+            });
+
+
+        </script>
+    </environment>
+
+    <environment exclude="Production">
+        @*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                    asp-fallback-test="window.jQuery"
+                    crossorigin="anonymous"
+                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+            </script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                    crossorigin="anonymous"
+                    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+            </script>*@
+        @*<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>*@
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    </environment>
+    <environment include="Production">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous"></script>
+
+        <script src="~/js/bootstrap.min.js"></script>
+        <script src="~/fontawesome/js/all.min.js"></script>
+        <script src="~/js/owl.carousel.min.js"></script>
+        <!-- <script src="js/canvas.js"></script> -->
+        <script src="~/js/index.js"></script>
+        <script src="~/js/wow.min.js"></script>
+        <script src="~/js/particles.js"></script>
+        <script src="~/js/app.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+        <script>
+            new WOW().init();
+        </script>
+        <script>
+            $(document).ready(function () {
+                setTimeout(function () {
+                    $("body").addClass("loaded");
+                    $("#loader-wrapper img").hide("slow");
+                    $(".dot-loader").hide("slow");
+                }, 3000);
+            });
+
+
+        </script>
+    </environment>
+    @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+
+    @RenderSection("Scripts", required: false)
+
+
+    <script>
+    </script>
+</body>
+</html>

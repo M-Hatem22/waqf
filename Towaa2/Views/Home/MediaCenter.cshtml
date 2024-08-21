@@ -1,0 +1,118 @@
+﻿@using Microsoft.AspNetCore.Http
+
+<!-- Spinner Start -->
+<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner"></div>
+</div>
+<!-- Spinner End -->
+<!-- Navbar & Carousel Start -->
+<div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="/Home/Index" class="navbar-brand p-0 logo">
+            <img src="/home/getLogo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="/Home/Index" class="nav-item nav-link">الرئيسية</a>
+                <a href="/Home/about" class="nav-item nav-link">من نحن</a>
+                @*                    <a href="/Home/BoarDirectors" class="nav-item nav-link">مجلس الإدارة</a>
+                               <a href="http://towastore.atmatech.co/Store/StoreIndex" class="nav-item nav-link">مشاريعنا </a>*@
+                <a href="@ViewBag.backLink" class="nav-item nav-link">مستفيدى الوقفية</a>
+
+                @* <a href="/Home/BankAccounts" class="nav-item nav-link">حساباتنا البنكية</a> *@
+                <a href="/Home/MediaCenter" class="nav-item nav-link active">المركز الاعلامي</a>
+                @* <a href="/Home/CustomerReviews" class="nav-item nav-link">قياس الرضا</a> *@
+
+                <a href="/Home/Contact" class="nav-item nav-link">تواصل معنا</a>
+            </div>
+            @* <a href="http://towastore.atmatech.co/Store/StoreIndex" target="_blank" class="btn btn-primary py-2 px-4 ms-3">تبرع الأن</a> *@
+            <a href="#" class="visionLogo py-2 px-4"><img src="~/img/NewLogo.png" /></a>
+
+        </div>
+    </nav>
+    <div class="container-fluid bg-primary py-5 bg-header">
+        <div class="row py-5">
+            <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                <h1 class="display-4 text-white animated zoomIn">
+                    المركز الاعلامي
+                </h1>
+                <a href="" class="h5 text-white">الرئيسية</a>
+                <i class="far fa-circle text-white px-2"></i>
+                <a href="" class="h5 text-white">
+                    المركز الاعلامي
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Navbar & Carousel End -->
+
+<div class="container-fluid py-5 wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+    <div class="container py-5">
+
+        <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
+            @*            <h5 class="fw-bold text-primary text-uppercase">
+            شارك - تطوع - اعمل
+            </h5>*@
+            <h1 class="mb-0">الأخبار</h1>
+        </div>
+    </div>
+    <!-- ======= Portfolio Section ======= -->
+    <div id="portfolio" class="paddsection container">
+
+
+            <div class="row portfolio-container" id="news">
+                
+            </div>
+
+    </div><!-- End Portfolio Section -->
+
+</div>
+
+@section scripts
+{
+    <script>
+        window.onload = function () {
+            $.ajax({
+                url: '/home/getallmedia',
+                type: 'POST',
+                success: function (dataOut) {
+                    dataIn = dataOut.data;
+                    console.log(dataIn);
+                    if (dataOut.result == "OK") {
+                        for (var i = 0; i < dataOut.data.length; i++) {
+                            $("#news").
+                                html((index, content) => {
+                                    var image, redirectlink ,imagelink = "";
+                                    if (dataIn[i].image) {
+                                        image = '<img src="/home/getmediaimage?mediaId=' + dataIn[i].id + '" class="img-fluid" alt = "" >';
+                                        imagelink = '<a href = "/home/getmediaimage?mediaId=' + dataIn[i].id + '" data - gallery="portfolioGallery" class="portfolio-lightbox preview-link" title = "App 2" > <i class="fa fa-eye"> </i></a>'
+                                    }
+                                    else {image = '<img src="img/OIP.jpg" class="img-fluid" alt = "" >'}
+                                    if (dataIn[i].link) { redirectlink = '<a href="' + dataIn[i].link + '">' }
+                                    else { redirectlink = ""; }
+                                    return `<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                                                ${redirectlink}
+                                                ${image}
+                                                <div class="portfolio-info">
+                                                <h4> ${dataIn[i].article} </h4>
+                                                ${imagelink}
+                                                </div>
+                                             </div>` + content
+                            });
+                        }
+                    }
+                    else if (dataOut.result == "ERROR")
+                        alert(data.Message);
+                },
+                error: function (err) {
+                    alert("Something Went Wrong!");
+                }
+            });
+        };
+    </script>
+}
+

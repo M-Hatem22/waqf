@@ -1,0 +1,229 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Http
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Projects"];
+}
+
+
+<!-- Content -->
+<!-- Lines -->
+<section class="content-lines-wrapper">
+    <div class="content-lines-inner">
+        <div class="content-lines"></div>
+    </div>
+</section>
+<!-- Header Banner -->
+<section class="banner-header banner-img valign bg-img bg-fixed bgBanner" data-overlay-light="3"
+         data-background="~/img/banner.jpg">
+    <!-- Left Panel -->
+    <div class="left-panel"></div>
+</section>
+<!-- Project Gallery -->
+<section class="section-padding2 projects ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="section-title">@Localizer["OurProject"]</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="bauen-gallery-filter">
+                    <li class="active" data-filter="*">@Localizer["All"]</li>
+                    <li data-filter=".privateBuildings">
+                        @Localizer["PrivateResidenceBuildings"]
+                    </li>
+                    <li data-filter=".IndustrialProjects">@Localizer["IndustrialProjects"]</li>
+                    <li data-filter=".CommercialBuildings">@Localizer["CommercialBuildings"]</li>
+                    <li data-filter=".InvestmentProjects">@Localizer["InvestmentProjects"]</li>
+                    <li data-filter=".InfrastructureProjects">@Localizer["InfrastructureProjects"]</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row bauen-gallery-items">
+
+            <div class="col-md-6 gallery-masonry-wrapper single-item CommercialBuildings">
+                <div class="item">
+                    <div class="position-re o-hidden"> <img src="~/img/projects/3-Abha Mall/1.jpeg" alt=""> </div>
+                    <div class="con">
+                        <h6><a href="/Home/AbhaMall">@Localizer["Project"]</a></h6>
+                        <h5><a href="/Home/AbhaMall">@Localizer["AbhaMall"]</a></h5>
+                        <div class="line"></div> <a href="/Home/AbhaMall"><i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item privateBuildings">
+                <div class="item">
+                    <div class="position-re o-hidden"> <img src="~/img/projects/1-Almahalla Villas/1.jpeg" alt=""> </div>
+                    <div class="con">
+                        <h6><a href="/Home/AlmahallaVillas">@Localizer["Project"]</a></h6>
+                        <h5><a href="/Home/AlmahallaVillas">@Localizer["AlmahallaVillas"]</a></h5>
+                        <div class="line"></div> <a href="/Home/AlmahallaVillas"><i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item privateBuildings ">
+                <div class="item">
+                    <div class="position-re o-hidden"> <img src="~/img/projects/2-Al Baeez Palace/1.jpeg" alt=""> </div>
+                    <div class="con">
+                        <h6><a href="/Home/AlBaeezPalace">@Localizer["Project"]</a></h6>
+                        <h5><a href="/Home/AlBaeezPalace">@Localizer["AlBaeezPalace"]</a></h5>
+                        <div class="line"></div> <a href="/Home/AlBaeezPalace"><i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item privateBuildings ">
+                <div class="item">
+                    <div class="position-re o-hidden"> <img src="~/img/projects/4-Al-Manea Rest/1.jpeg" alt=""> </div>
+                    <div class="con">
+                        <h6><a href="/Home/AlManeaRest">@Localizer["Project"]</a></h6>
+                        <h5><a href="/Home/AlManeaRest">@Localizer["AlManeaRest"]</a></h5>
+                        <div class="line"></div> <a href="/Home/AlManeaRest"><i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 gallery-masonry-wrapper single-item IndustrialProjects">
+                <div class="item">
+                    <div class="position-re o-hidden"> <img src="~/img/projects/5-Bejment Factory/1.jpeg" alt=""> </div>
+                    <div class="con">
+                        <h6><a href="/Home/BejmentFactory">@Localizer["Project"]</a></h6>
+                        <h5><a href="/Home/BejmentFactory">@Localizer["BejmentFactory"]</a></h5>
+                        <div class="line"></div> <a href="/Home/BejmentFactory"><i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item InvestmentProjects">
+                <div class="item">
+                    <div class="position-re o-hidden"> <img src="~/img/projects/6-Coffee shops Project/1.jpeg" alt=""> </div>
+                    <div class="con">
+                        <h6><a href="/Home/CoffeeshopsProject">@Localizer["Project"]</a></h6>
+                        <h5><a href="/Home/CoffeeshopsProject">@Localizer["CoffeeshopsProject"]</a></h5>
+                        <div class="line"></div> <a href="/Home/CoffeeshopsProject"><i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item InvestmentProjects">
+                <div class="item">
+                    <div class="position-re o-hidden"> <img src="~/img/projects/7-Specialized Medical Center Hospital/1.jpeg" alt=""> </div>
+                    <div class="con">
+                        <h6><a href="/Home/SpecializedMedicalCenterHospital">@Localizer["Project"]</a></h6>
+                        <h5><a href="/Home/SpecializedMedicalCenterHospital">@Localizer["SpecializedMedicalCenterHospital"]</a></h5>
+                        <div class="line"></div> <a href="/Home/SpecializedMedicalCenterHospital"><i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 gallery-masonry-wrapper single-item InvestmentProjects">
+                <div class="item">
+                    <div class="position-re o-hidden"> <img src="~/img/projects/8-Wahet Khamees/1.jpeg" alt=""> </div>
+                    <div class="con">
+                        <h6><a href="/Home/OtherWorkes">@Localizer["Project"]</a></h6>
+                        <h5><a href="/Home/WahetKhamees">@Localizer["WahetKhamees"]</a></h5>
+                        <div class="line"></div> <a href="/Home/WahetKhamees"><i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item InfrastructureProjects">
+                <div class="item">
+                    <div class="position-re o-hidden"> <img src="~/img/projects/9-infustructure/1.jpeg" alt=""> </div>
+                    <div class="con">
+                        <h6><a href="/Home/OtherWorkes">@Localizer["Project"]</a></h6>
+                        <h5><a href="/Home/infustructure">@Localizer["infustructure"]</a></h5>
+                        <div class="line"></div> <a href="/Home/infustructure"><i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 gallery-masonry-wrapper single-item privateBuildings">
+                <div class="item">
+                    <div class="position-re o-hidden"> <img src="~/img/projects/11-Other Workes/1.jpeg" alt=""> </div>
+                    <div class="con">
+                        <h6><a href="/Home/OtherWorkes">@Localizer["Project"]</a></h6>
+                        <h5><a href="/Home/OtherWorkes">@Localizer["OtherWorkes"]</a></h5>
+                        <div class="line"></div> <a href="/Home/OtherWorkes"><i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Promo video - Testiominals -->
+<section class="testimonials">
+    <div class="background bg-img bg-fixed section-padding pb-0 bgBanner2" data-background="~/img/banner2.jpg"
+         data-overlay-dark="3">
+        <div class="container">
+            <div class="row">
+                <!-- Promo video -->
+                <div class="col-md-12">
+                    <div class="vid-area">
+                        <div class="vid-icon">
+                            <a class="play-button vid" href="https://youtu.be/7teT7_lnOlE">
+                                <svg class="circle-fill">
+                                    <circle cx="43" cy="43" r="39" stroke="#fff" stroke-width=".5"></circle>
+                                </svg>
+                                <svg class="circle-track">
+                                    <circle cx="43" cy="43" r="39" stroke="none" stroke-width="1" fill="none">
+                                    </circle>
+                                </svg> <span class="polygon">
+                                    <i class="ti-control-play"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="cont mt-15 mb-30">
+                            <h5>@Localizer["ViewPromoVideo"]</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testiominals -->
+                <!-- <div class="col-md-5 offset-md-1">
+                    <div class="testimonials-box animate-box" data-animate-effect="fadeInUp">
+                        <div class="head-box">
+                            <h4>What Client's Say?</h4>
+                        </div>
+                        <div class="owl-carousel owl-theme">
+                            <div class="item"> <span class="quote"><img src="~/img/quot.png" alt=""></span>
+                                <p>Architect dapibus augue metus the nec feugiat erat hendrerit nec. Duis ve
+                                    ante the lemon sanleo nec feugiat erat hendrerit necuis ve ante.</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="~/img/team/1.jpg" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>Jason Brown</h6> <span>Crowne Plaza Owner</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item"> <span class="quote">
+                                    <img src="~/img/quot.png" alt="">
+                                </span>
+                                <p>Interior dapibus augue metus the nec feugiat erat hendrerit nec. Duis ve ante
+                                    the lemon sanleo nec feugiat erat hendrerit necuis ve ante.</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="~/img/team/2.jpg" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>Emily White</h6> <span>Armada Owner</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item"> <span class="quote">
+                                    <img src="~/img/quot.png" alt="">
+                                </span>
+                                <p>Urban dapibus augue metus the nec feugiat erat hendrerit nec. Duis ve ante
+                                    the lemon sanleo nec feugiat erat hendrerit necuis ve ante.</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="~/img/team/4.jpg" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>Jesica Smith</h6> <span>Alsa Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+

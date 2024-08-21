@@ -1,0 +1,74 @@
+﻿@model EgyVisionCore.Entities.EgyVision.VM.ProjectsVM;
+@{
+    ViewData["Title"] = Model.ProjectTitleEn;
+}
+<div class="primary proojects">
+    <div class="row">
+        @await Component.InvokeAsync("LeftSide")
+        <div class="col-lg-11 px-0">
+            <div class="item">
+                <div class="cover">
+                    <div class="">
+                        <div class="row">
+                            <div class="container">
+                                <!--ourprojects information-->
+                                <div class="ourprojects_section py-4 px-5">
+                                    <div class="pro-details p-4">
+                                        <!---Gallarey ourprojects details-->
+                                        <div class="">
+                                            <div class="pro_info text-white mt-4">
+                                                <div class="info_title">
+                                                    <h2 class="text-left pb-3 mb-4 wow bounceIn" data-wow-duration="1s" data-wow-delay="3.5s" data-wow-offset="100">
+                                                        @Model.ProjectTitleEn
+                                                    </h2>
+                                                </div>
+                                                <div class="">
+                                                    @Html.Raw(Model.ContentEn)
+                                                </div>
+                                                <br />
+                                            </div>
+                                            <div class="img-pro">
+                                                <div class="row">
+                                                    @foreach (var item in Model.GalleryPictures)
+                                                    {
+                                                        var base64 = Convert.ToBase64String(item.AttachmentFile);
+                                                        var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                                                        <div class="col-md-2 col-sm-6 col-xs-12   thumb">
+                                                            <a class="pop thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                                               data-image=@imgSrc
+                                                               data-target="#image-gallery">
+                                                                <figure class="snip1584">
+                                                                    <div class="border_img">
+                                                                        <img class=""
+                                                                             src=@imgSrc
+                                                                             style="height:100%; width:100%"
+                                                                             alt="Another alt text">
+                                                                    </div>
+                                                                    <figcaption>
+                                                                        <i class="fas fa-search-plus"></i>
+                                                                    </figcaption>
+                                                                </figure>
+                                                            </a>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--================Header Area =================-->
+                        </div>
+                    </div>
+                </div>
+                @await Component.InvokeAsync("Footer")
+            </div>
+        </div>
+        @await Component.InvokeAsync("RightSide")
+    </div>
+</div>
+
+@section scripts
+{
+}

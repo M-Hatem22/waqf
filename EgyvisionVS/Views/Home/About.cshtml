@@ -1,0 +1,98 @@
+﻿@model List<EgyVisionCore.Entities.EgyVision.VM.LKMenuCatContentVM>;
+
+@{
+    ViewData["Title"] = "About";
+}
+<div class="primary about-us proojects">
+    <div class="row">
+        @await Component.InvokeAsync("LeftSide")
+        <div class="col-lg-11 px-0">
+            <div class="container">
+                <div class="content-about py-4 px-5 mb-4">
+                    <div class="p-4">
+                        <div class="text-white">
+                            <div class="info_title">
+                                <h2 class="my-4 pb-3 wow bounceIn text-center" data-wow-duration="1s" data-wow-delay="3.5s" data-wow-offset="100">
+                                    About us
+                                </h2>
+                            </div>
+                            <div class="info_description wow fadeInUp" data-wow-duration="1s" data-wow-delay="3.5s" data-wow-offset="100">
+                                @Html.Raw(Model[0].ContentEn)
+                            </div>
+                            <br />
+                            <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="3.8s" data-wow-offset="100">
+                                <div class="info_title">
+                                    <h5 class="text-left pb-1 wow bounceIn" data-wow-duration="1s" data-wow-delay="0.5" data-wow-offset="100">
+                                        OUR MISSION
+                                    </h5>
+                                </div>
+                                <div class="info_description mb-5">
+                                    @Html.Raw(Model[1].ContentEn)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="3.8s" data-wow-offset="100">
+                            <div class="info_title text-white">
+                                <h5 class="text-left pb-3 mb-3 wow bounceIn font-weight-bold" data-wow-duration="1s" data-wow-delay="0.5" data-wow-offset="100">
+                                    OUR SERVICES
+                                </h5>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 mb-3  pr-0">
+                                    <div class="Features wow bounceIn" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="100">
+                                        <div class="feature_content">
+                                            <img src="~/images/truck-transport-with-construction-materials@2x.png">
+                                            <h4 class="mt-2">
+                                                Materials Import
+                                                <br>
+                                                & Supply
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 bg-white mb-3 pl-0 p-4 row h-22 contentbragraph draw">
+                                    <p class="my-auto">
+                                        we import the best materials for building facades and landscape to large scale and high-end  residential, commercial and outdoor projects with the best prices and services.
+                                    </p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 mb-3 pr-0">
+                                    <div class="Features wow bounceIn" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="100">
+                                        <div class="feature_content">
+                                            <img src="~/images/transparent-lamp-icon-interior-design-icon-living-room-icon-5dd3ac6ab17763.1137765315741533227269.png">
+                                            <h4 class="mt-2">
+                                                Installation<br>
+                                                & Contracting
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 bg-white mb-3 pl-0 p-4 row h-22 contentbragraph draw">
+                                    <p class="my-auto">
+                                        we provide contracting and installation of our materials to meet the project design and shop drawings as per client requirements with the newest methods and installation techniques.
+                                    </p>
+                                </div>
+                                <div class="col-lg-3 col-md-3 mb-3 pr-0">
+                                    <div class="Features wow bounceIn" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="100">
+                                        <div class="feature_content">
+                                            <img src="~/images/clipart1991391.png">
+                                            <h4 class="mt-2">
+                                                Smart Home <br>
+                                                Solutions
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-9 col-md-9 bg-white mb-3 pl-0 p-4 row h-22 contentbragraph">
+                                    <p class="my-auto">We provide building smart solutions including video door phone, security and surveillance, lighting and shutter control.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--footer-->
+            @await Component.InvokeAsync("Footer")
+        </div>
+        @await Component.InvokeAsync("RightSide")
+    </div>
+</div>

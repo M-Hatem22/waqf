@@ -1,0 +1,38 @@
+﻿@model List<EgyVisionCore.Entities.EgyVision.VM.ProjectCoverAttachmentViewVM>;
+>
+<div class="Services_info py-3">
+    <h3 class="text-center  mb-5 pb-3 wow bounceIn text-black" data-wow-duration="1s" data-wow-delay="0" data-wow-offset="100">
+        Projects
+    </h3>
+    <div class="clients_logoes projects_slides py-5">
+        <!--owl slider--->
+        <div id="demos">
+            <div class="">
+                <div class="large-12 columns">
+                    <div class="">
+                        <div class="owl-carousel owl-carousel_projects ken-carousel owl-theme">
+                            @foreach (var item in Model)
+                            {
+                                var base64 = Convert.ToBase64String(item.AttachmentFile);
+                                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                                <div class="item">
+                                    <!-- <img src="images/900-for-web-1.jpg"> -->
+                                    <a href="/Home/ProjectDetails?projectId=@item.ProjectId">
+                                        <figure class="snip1584" data-toggle="modal" data-target="#myModal">
+                                            <img class="card-img"
+                                                 src=@imgSrc style="min-height: 475px; max-height: 475px; " alt="">
+                                            <figcaption>
+                                                <h3>@item.ProjectTitleEn </h3>
+                                                <h5>Project</h5>
+                                            </figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,183 @@
+﻿@model EgyVisionCore.Entities.EgyVision.VM.ContactUsVM;
+ <!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcome-list shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="breadcome-heading">
+                                <h2>مرحبا بك فى ATMA</h2>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <ul class="breadcome-menu">
+                                <li>
+                                    <a asp-controller="Home" asp-action="Index">الرئيسية</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li>
+                                    <span class="bread-blod"> بيانات التواصل</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!--  System Start-->
+<div class="basic-form-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="inbox-email-menu-list shadow-reset mg-b-30">
+                            <div class="compose-email">
+                                <a href="#"> بيانات التواصل </a>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li class="active">
+                                    <a asp-controller="Home" asp-action="ContactUs">
+                                        <span class="inbox-icon">
+                                            <i class="fa fa-file-text"></i>
+                                        </span> بيانات اساسية
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a asp-controller="Home" asp-action="Social">
+                                        <span class="inbox-icon">
+                                            <i class="fa fa-sitemap"></i>
+                                        </span> مواقع التواصل الاجتماعى
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <!--- Menu --->
+                        <div class="sparkline8-list basic-res-b-30 shadow-reset mg-b-30">
+                            <div class="sparkline8-hd">
+                                <div class="main-sparkline8-hd">
+                                    <h1>بيانات اساسية</h1>
+                                    <div class="sparkline8-outline-icon">
+                                        <!-- <span class="sparkline8-collapse-link"><i
+                                                class="fa fa-chevron-up"></i></span> -->
+                                        <!-- <span class="sparkline8-collapse-close"><i
+                                                class="fa fa-times"></i></span> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form id="frmData" class="sparkline8-graph" asp-controller="Home" asp-action="UpdateContactUs" method="post">
+                                <div class="mg-b-15">
+
+                                    <div class="view-Links-action ">
+                                        <input class="btn-success fa fa-save buttonTop" type="submit" value="حفظ" />
+                                        @*<a href="#" class="btn-success"><i class="fa fa-save"></i> حفظ</a>*@
+                                        <a class="btn-warning" href="javascript:window.print()">
+                                            <i class="fa fa-print"></i> طباعه
+                                        </a>
+                                        <!--<a class="btn-danger" href="#">-->@*<i class="fa fa-trash-o"></i> حذف*@<!--</a>-->
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                                <div class="basic-form-form-ad">
+                                    <div class="basic-form-inner">
+                                        <div class="row">
+                                            @Html.HiddenFor(model => model.ID)
+                                            @Html.HiddenFor(model => model.Latitude)
+                                            @Html.HiddenFor(model => model.Longitude)
+                                            <div class="col-md-4 col-sm-12">
+                                                <div class="form-group-inner">
+                                                    <label>جوال </label>
+                                                    <div class="form-input-area en">
+                                                        @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "text-box form-control single-line", @placeholder = " جوال  " })
+                                                        <i class="fa fa-mobile form-user" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-12">
+                                                <div class="form-group-inner">
+                                                    <label>تليفون </label>
+                                                    <div class="form-input-area en">
+                                                        @Html.TextBoxFor(model => model.MobileNumber, new { @class = "text-box form-control single-line", @placeholder = " تليفون  " })
+                                                        <i class="fa fa-phone form-user" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-12">
+                                                <div class="form-group-inner">
+                                                    <label>بريد الكترونى </label>
+                                                    <div class="form-input-area en">
+                                                        @Html.TextBoxFor(model => model.Email, new { @class = "text-box form-control single-line", @placeholder = " بريد الكترونى  " })
+                                                        <i class="fa fa-envelope-open form-user" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-12">
+                                                <div class="Boxhd">
+                                                    <h2>بيانات الموقع</h2>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-12">
+                                                <div class="form-group-inner">
+                                                    <label>العنوان انجليزى</label>
+                                                    <div class="form-textarea-area en">
+                                                        @Html.TextAreaFor(model => model.TitleEn, new { @class = "text-box form-control single-line", @placeholder = "  العنوان انجليزى  " })
+                                                        <i class="fa fa-map form-user"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group-inner">
+                                                    <label>العنوان عربى</label>
+                                                    <div class="form-textarea-area">
+                                                        @Html.TextAreaFor(model => model.TitleAr, new { @class = "text-box form-control single-line", @placeholder = "  العنوان عربى  " })
+                                                        <i class="fa fa-map form-user"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-12">
+                                                <div class="form-group-inner">
+                                                    <label> جوجل URL </label>
+                                                    <div class="form-input-area en">
+                                                        @Html.TextBoxFor(model => model.GoogleURL, new { @class = "text-box form-control single-line", @placeholder = " URL " })
+                                                        <i class="fa fa-map-marker form-user" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                                @*<div class="Map" id="LocationMap">
+                                                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3456.238954627636!2d30.943892000000005!3d29.972562000000003!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5024fd9866839e3d!2sAl-Hosary%20Mosque!5e0!3m2!1sen!2seg!4v1580046521058!5m2!1sen!2seg"
+                                                                width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" id="LocationMap">
+                                                        </iframe>
+                                                    </div>*@
+                                                <div id="location">
+                                                    @*   <iframe src="https://maps.google.com/maps?q=13.033419,77.563976&z=15&output=embed" width="360" height="270" frameborder="0" style="border:0"></iframe>*@
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--- End Menu --->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  System end-->
+
+@section scripts
+{
+    <script src="~/ProjectJSFiles/MinifiedJsFiles/ContacUs.min.js"></script>
+}
+

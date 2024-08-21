@@ -1,0 +1,63 @@
+﻿@model EgyvisionVS.Models.LeftSideModelVM;
+@{
+    ViewData["Title"] = "leftside";
+    //Layout = "~/Views/Home/Index.cshtml";
+}
+<div class="col-lg-1 px-0">
+    <div class="left_slider">
+        <header>
+            <div class="">
+                <div class="secondaryOpacity text-center pt-1 mr-lg-5 mr-md-0">
+                    <div class="header-content text-center">
+                        <div class="logo-responsve row h-100 d-flex justify-content-between">
+                            <div class="logo_site text-center my-auto">
+                                <a href="/Home/Index">
+                                    @{
+                                        var base64 = Convert.ToBase64String(Model.LogoImage.AttachmentFile);
+                                        var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                                        <img src=@imgSrc>
+                                    }
+
+                                </a>
+                            </div>
+                            <div class="row h-100">
+                                <span class="menu_icon my-auto text-white d-block d-sm-block d-md-block d-lg-none"
+                                      onclick="openNav()">
+                                    <i class="fas fa-bars"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="responsive-social justify-content-between">
+                        <div class="social_we">
+                            <div class="we_social">
+                                <p>We Are Social</p>
+                            </div>
+                            <div class="reverse_border"></div>
+                            <ul class="social-network social-circle text-black">
+                                <li class="">
+                                    <a href=@Model.ContactUs.FacebookUrl target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href=@Model.ContactUs.LinkedinUrl target="_blank">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href=@Model.ContactUs.InstagramUrl target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="LetsMeet text-black d-none d-sm-none d-md-block d-lg-block">
+                            <h6><a href="/Home/About" class="text-black readme">Let's Meet</a></h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+</div>

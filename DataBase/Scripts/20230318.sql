@@ -1,0 +1,9 @@
+CREATE TABLE HomeAboutUs(
+HomeAboutUsId BIGINT PRIMARY KEY IDENTITY(1,1),
+HomeAboutUsAr NVARCHAR(500),
+HomeAboutUEn NVARCHAR(500),
+TimeInsert DATETIME,
+Deleted DATETIME
+);
+GO
+  

@@ -1,0 +1,269 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Http
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Contact"];
+}
+<!-- Content -->
+    <!-- Lines -->
+    <section class="content-lines-wrapper">
+        <div class="content-lines-inner">
+            <div class="content-lines"></div>
+        </div>
+    </section>
+    <!-- Header Banner -->
+    <section class="banner-header banner-img valign bg-img bg-fixed bgBanner" data-overlay-light="3">
+        <!-- Left Panel -->
+        <div class="left-panel"></div>
+    </section>
+    <!-- Contact -->
+    <section class="section-padding2 ">
+        <div class="contactInfo">
+            <div class="container" style="padding-top:10px;">
+                <div class="contactAll">
+                    <h3 class="section-title titleH3">@Localizer["ContactUsAll"] <span>@Localizer["sheikhkitchens"]</span></h3>
+                    <p><b>@Localizer["Phone"] : </b> <span class="DirLTR">+966 9200 02153</span> </p>
+                    <p><b>@Localizer["Email"] :</b> info@sheikhkitchens-sa.com</p>
+                </div>
+                <div class="row mb-90 BranchesAll">
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["RIYADH"]</span></h3>
+                        <a href="https://g.page/r/CQUobPO2-g9hEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["RIYADH2"]</span></h3>
+                        <a href="https://g.page/r/Ce-C3pro5CajEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["RIYADH17"]</span></h3>
+                        <a href="https://g.page/r/CXvPFcUyO84iEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["RiyadhSpecialist"]</span></h3>
+                        <a href="https://g.page/r/CRnUy18s_f6kEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <!-- Map Section -->
+                    <!--<div class="col-md-8 mb-30 animate-box" data-animate-effect="fadeInUp">-->
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13419.040333881774!2d-79.93218134282569!3d32.77209999120473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe7a1ae84ff639%3A0xe5c782f71924a526!2s24%20King%20St%2C%20Charleston%2C%20SC%2029401%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1635894790855!5m2!1str!2str" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+                    <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.9635210334045!2d46.773129374699494!3d24.72813260585244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f0112dc40e0e3%3A0xeccd49b2bb324be3!2zMjgxMiDYtNin2LHYuSDYp9mE2K3Ys9mGINio2YYg2LnZhNmK2Iwg2KfZhNix2YjYttip2Iwg2KfZhNix2YrYp9i2IDEzMjEx2Iwg2KfZhNiz2LnZiNiv2YrYqQ!5e0!3m2!1sar!2seg!4v1661780838946!5m2!1sar!2seg" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>-->
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["RIYADH9"]</span></h3>
+                        <a href="https://g.page/r/CY5cMrDKpvrNEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["RIYADH5"]</span></h3>
+                        <a href="https://g.page/r/CdsD5En2HgF0EAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["RiyadhAlKharj"]</span></h3>
+                        <a href="https://g.page/r/CeG2J_AbMn-FEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["Buraidah"]</span></h3>
+                        <a href="https://g.page/r/CYLHGNwdHfFhEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+
+
+
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["Unaizah"]</span></h3>
+                        <a href="https://g.page/r/Cd7QX-u4HnxmEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["Sakaka"]</span></h3>
+                        <a href="https://g.page/r/CXUlIJDpzTEPEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["Medina"]</span></h3>
+                        <a href="https://g.page/r/CYRuEz_Zxb0HEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["AbhaAlGhalith"]</span></h3>
+                        <a href="https://g.page/r/CSsqfZ2_AvCUEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+
+
+
+
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["AbhaAlMansk"]</span></h3>
+                        <a href="https://g.page/r/CcFD64yqR_-2EAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["KhamisMushait"]</span></h3>
+                        <a href="https://g.page/r/Cb2eYm-gkLeXEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["KhamisMushaitmainbranch"]</span></h3>
+                        <a href="https://g.page/r/CUbNNBliU6-3EAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["bunaaCity"]</span></h3>
+                        <a href="https://g.page/r/CT4EwfCV-UXREAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+
+
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["Jazan2"]</span></h3>
+                        <a href="https://g.page/r/CRVwLJXN7rKMEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["Hail"]</span></h3>
+                        <a href="https://g.page/r/CXVXvafIfZzdEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["NajranDah"]</span></h3>
+                        <a href="https://g.page/r/CeNvcPFZlzRzEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["NajranAlArisah"]</span></h3>
+                        <a href="https://g.page/r/CegaKheYtEzGEAE" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["Dammam"]</span></h3>
+                        <a href="https://goo.gl/maps/zH71SFE9ir9R2rVR6" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                    <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                        <h3 class="section-title titleH3">@Localizer["Branches"] <br /><span>@Localizer["Exit17New"]</span></h3>
+                        <a href="https://goo.gl/maps/UdyWQUHf8SD27XzB7" target="_blank" class="LocationLink"><i class="fa fa-map-marker"></i> @Localizer["Location"] </a>
+                        <div class="lineBox"></div>
+                    </div>
+                </div>
+
+
+                @*<div class="row mb-90">
+                            <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                                <h3 class="section-title titleH3">@Localizer["Branches"] <span>@Localizer["RIYADH"]</span></h3>
+
+                                <p><b><i class="fa fa-map-marker"></i> MAIN BRANCH - PRINCE SULTAN ST , RIYADH</b> </p>
+                                <p><b>@Localizer["Phone"] :</i> </b> <span class="DirLTR">+966 0501364440</span> </p>
+                                <p><b>@Localizer["Email"] :</b> info@sheikhkitchens-sa.com</p>
+
+                                <div class="lineBox"></div>
+                                <p><b><i class="fa fa-map-marker"></i> AL-TAKHASSOUSI ST , RIYADH</b> </p>
+                                <p><b>@Localizer["Phone"] :</i> </b> <span class="DirLTR">+966 0500606511</span> </p>
+                                <p><b>@Localizer["Email"] :</b> info@sheikhkitchens-sa.com</p>
+
+                                <div class="lineBox"></div>
+                                <p><b><i class="fa fa-map-marker"></i> EXIT 9 , RIYADH</b> </p>
+                                <p><b>@Localizer["Phone"] :</i> </b> <span class="DirLTR">+966 0557049998</span> </p>
+                                <p><b>@Localizer["Email"] :</b> info@sheikhkitchens-sa.com</p>
+
+                            </div>
+                            <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                                <h3 class="section-title titleH3">@Localizer["Branches"] <span>@Localizer["ALQASSIM"]</span></h3>
+                                <p><b>
+            <i class="fa fa-map-marker"></i> BURAYDAH BRANCH
+        </b> </p>
+                                <p><b>@Localizer["Phone"] :</i> </b> <span class="DirLTR">
+            +966 0500711140
+        </span> </p>
+                                <p><b>@Localizer["Email"] :</b> info@sheikhkitchens-sa.com</p>
+
+                                <div class="lineBox"></div>
+                                <p><b><i class="fa fa-map-marker"></i> UNAIZAH BRANCH</b> </p>
+                                <p><b>@Localizer["Phone"] :</i> </b> <span class="DirLTR">+966 0548805896</span> </p>
+                                <p><b>@Localizer["Email"] :</b> info@sheikhkitchens-sa.com</p>
+                            </div>
+                            <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                                <h3 class="section-title titleH3">@Localizer["Branches"] <span>@Localizer["ABHA"]</span></h3>
+                                 <p><b>
+            <i class="fa fa-map-marker"></i> ABHA BRANCH
+        </b> </p>
+                                <p><b>@Localizer["Phone"] :</i> </b> <span class="DirLTR">+966 0550988026</span> </p>
+                                <p><b>@Localizer["Email"] :</b> info@sheikhkitchens-sa.com</p>
+
+                                <div class="lineBox"></div>
+                                <p><b><i class="fa fa-map-marker"></i> KHAMIS MUSHAIT BRANCH</b> </p>
+                                <p><b>@Localizer["Phone"] :</i> </b> <span class="DirLTR">+966 0548805896</span> </p>
+                                <p><b>@Localizer["Email"] :</b> info@sheikhkitchens-sa.com</p>
+                            </div>
+                            <div class="col-md-3 mb-30 animate-box" data-animate-effect="fadeInUp">
+                                <h3 class="section-title titleH3">@Localizer["Branches"] <span>@Localizer["JAZAN "]</span></h3>
+                                <p><b><i class="fa fa-map-marker"></i> JAZAN BRANCH</b> </p>
+                                <p><b>@Localizer["Phone"] :</i> </b> <span class="DirLTR">+966 0548805879</span> </p>
+                                <p><b>@Localizer["Email"] :</b> info@sheikhkitchens-sa.com</p>
+
+                                <div class="lineBox"></div>
+                                <p><b><i class="fa fa-map-marker"></i> NAJRAN BRANCH</b> </p>
+                                <p><b>@Localizer["Phone"] :</i> </b> <span class="DirLTR">+966 0551222539</span> </p>
+                                <p><b>@Localizer["Email"] :</b> info@sheikhkitchens-sa.com</p>
+                            </div>
+                             Map Section
+                            <div class="col-md-8 mb-30 animate-box" data-animate-effect="fadeInUp">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13419.040333881774!2d-79.93218134282569!3d32.77209999120473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88fe7a1ae84ff639%3A0xe5c782f71924a526!2s24%20King%20St%2C%20Charleston%2C%20SC%2029401%2C%20Amerika%20Birle%C5%9Fik%20Devletleri!5e0!3m2!1str!2str!4v1635894790855!5m2!1str!2str" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.9635210334045!2d46.773129374699494!3d24.72813260585244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f0112dc40e0e3%3A0xeccd49b2bb324be3!2zMjgxMiDYtNin2LHYuSDYp9mE2K3Ys9mGINio2YYg2LnZhNmK2Iwg2KfZhNix2YjYttip2Iwg2KfZhNix2YrYp9i2IDEzMjEx2Iwg2KfZhNiz2LnZiNiv2YrYqQ!5e0!3m2!1sar!2seg!4v1661780838946!5m2!1sar!2seg" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+
+                        </div>*@
+
+            </div>
+        </div>
+        <div class="container">
+            @*<div class="row">
+            <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                <h2 class="section-title">@Localizer["Contact"] <span>@Localizer["Us"]</span></h2>
+            </div>
+        </div>*@
+            <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                <h4><b>@Localizer["ContactWithUs"]</b></h4>
+                <form method="post" class="contact__form" action="mail.php">
+                    <!-- Form message -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-success contact__msg" style="display: none" role="alert">
+                                @Localizer["MessageAlert"] Your message was sent successfully.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Form elements -->
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <input name="name" type="text" placeholder="@Localizer["YourName"]" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input name="email" type="email" placeholder="@Localizer["YourEmail"]" required>
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <input name="phone" type="text" placeholder="@Localizer["YourPhone"]" required>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input name="subject" type="text" placeholder="@Localizer["YourSubject"]" required>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <textarea name="message" id="message" cols="30" rows="4" placeholder="@Localizer["YourSubject"]" required></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <input name="submit" type="submit" value="@Localizer["SendMessage"]">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+

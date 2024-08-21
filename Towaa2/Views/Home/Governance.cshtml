@@ -1,0 +1,227 @@
+﻿@using Microsoft.AspNetCore.Http
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+<!-- Navbar & Carousel Start -->
+<div class="container-fluid position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+        <a href="/Home/Index" class="navbar-brand p-0 logo">
+            <img src="/home/getLogo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                <a href="/Home/Index" class="nav-item nav-link ">الرئيسية</a>
+                <a href="/Home/about" class="nav-item nav-link">من نحن</a>
+                @*                    <a href="/Home/BoarDirectors" class="nav-item nav-link">مجلس الإدارة</a>
+                <a href="http://towastore.atmatech.co/Store/StoreIndex" class="nav-item nav-link">مشاريعنا </a>*@
+                <a href="/Home/Governance" class="nav-item nav-link active">الحوكمة</a>
+                @* <a href="/Home/BankAccounts" class="nav-item nav-link">حساباتنا البنكية</a> *@
+                <a href="/Home/MediaCenter" class="nav-item nav-link">المركز الاعلامي</a>
+                @* <a href="/Home/CustomerReviews" class="nav-item nav-link">قياس الرضا</a> *@
+                <a href="/Home/Contact" class="nav-item nav-link">تواصل معنا</a>
+            </div>
+            @* <a href="http://towastore.atmatech.co/Store/StoreIndex" target="_blank" class="btn btn-primary ">تبرع الأن</a> *@
+            <a href="#" class="visionLogo py-2 px-4"><img src="~/img/NewLogo.png" /></a>
+
+        </div>
+    </nav>
+    <div class="container-fluid bg-primary py-5 bg-header">
+    <div class="row py-5">
+        <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+            <h1 class="display-4 text-white animated zoomIn">الحوكمة
+            </h1>
+            <a href="" class="h5 text-white">الرئيسية</a>
+            <i class="far fa-circle text-white px-2"></i>
+            <a href="" class="h5 text-white">الحوكمة
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Navbar & Carousel End -->
+
+
+
+    <!-- Service Start -->
+    <div class="container-fluid py-5 wow fadeInUp governanceBox" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+@*                <h5 class="fw-bold text-primary text-uppercase">شركاء النجاح
+*@
+                </h5>
+                @* <h1 class="mb-0">شارك - تطوع - اعمل </h1> *@
+            </div>
+            <div class="row g-5">
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s" type="button" data-bs-toggle="modal" data-bs-target="#AttModal" @*onclick="LoadAtt(1)"*@>
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-clone text-white"></i>
+                        </div>
+                    <h4>اللوائح والسياسيات</h4>
+
+
+                </div>
+                </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s" type="button" data-bs-toggle="modal" data-bs-target="#AttModal" @*onclick="LoadAtt(2)"*@>
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-clone text-white"></i>
+                        </div>
+                        <h4>اجتماعات الجمعية العمومية</h4>
+                         
+                         
+                    </div>
+                </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s" type="button" data-bs-toggle="modal" data-bs-target="#AttModal" @*onclick="LoadAtt(3)"*@>
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-clone text-white"></i>
+                        </div>
+                        <h4 class="">الأنظمة</h4>
+                         
+                         
+                    </div>
+                </div>
+           @* <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s" type="button" data-bs-toggle="modal" data-bs-target="#AttModal" onclick="LoadAtt(4)">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-clone text-white"></i>
+                        </div>
+                        <h4 class="">النماذج</h4>
+                         
+                         
+                    </div>
+                </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s" type="button" data-bs-toggle="modal" data-bs-target="#AttModal" onclick="LoadAtt(5)">
+                    <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-clone text-white"></i>
+                        </div>
+                        <h4 class="">المحاضر</h4>
+                         
+                         
+                    </div>
+                </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s" type="button" data-bs-toggle="modal" data-bs-target="#AttModal" onclick="LoadAtt(6)">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-clone text-white"></i>
+                        </div>
+                        <h4 class="">اللجان</h4>
+                         
+                         
+                    </div>
+                </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s" type="button" data-bs-toggle="modal" data-bs-target="#AttModal" onclick="LoadAtt(7)">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-clone text-white"></i>
+                        </div>
+                        <h4 class="">القوائم المالية</h4>
+                         
+                         
+                    </div>
+                </div>
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s" type="button" data-bs-toggle="modal" data-bs-target="#AttModal" onclick="LoadAtt(8)">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-clone text-white"></i>
+                        </div>
+                        <h4 class="">التقارير</h4>
+                         
+                         
+                    </div>
+                </div>   
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s" type="button" data-bs-toggle="modal" data-bs-target="#AttModal" onclick="LoadAtt(9)">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-clone text-white"></i>
+                        </div>
+                    <h4 class="">الاستبانات</h4>
+                         
+                    </div>
+                </div>    
+            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s" type="button" data-bs-toggle="modal" data-bs-target="#AttModal" onclick="LoadAtt(10)">
+                <div class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
+                        <div class="service-icon">
+                            <i class="fa fa-clone text-white"></i>
+                        </div>
+                        <h4 class="">خطط الجمعية</h4>
+                         
+                    </div>
+                                        
+
+            </div>
+            *@
+        </div>
+    </div>
+    <!-- Service End -->
+
+</div>
+
+<div class="modal fade" id="AttModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">الملفات</h5>
+                <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="lightBox UplodBox">
+                          @*  <h2>ملفات المنشأه</h2>*@
+                            <div class="form-input-area" id="attDiv">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+@*            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">Close</button>
+            </div>*@
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+        });
+
+        function LoadAtt(Id) {
+            $("#attDiv").empty();
+            $.ajax
+                ({
+                    url: '/Home/GetAtt?id=' + Id,
+                    type: 'GET',
+                    success: function (data) {
+                        if (data.result == "OK") {                         
+                            if (data.items.length > 0) {
+                                for (var i = 0; i < data.items.length; i++) {
+                                    $("#attDiv").append(`<a id=att${data.items[i].governanceAttachmentsId} target="_blank" href="/Home/ShowAtt?AttId= ` + data.items[i].governanceAttachmentsId + `" style="display:inline;"><i class="fa fa-download"></i> ${data.items[i].governanceAttachmentsNameAr}</a>`);
+                                }
+                            }
+                            else if (data.items.length == 0) {
+                                $("#attDiv").append(`<button class="btn btn-info btn-xs" disabled><i class="fa fa-check"></i> لا يوجد ملفات</button>`);
+                            }
+                        }
+                        else {
+                            alert("wrong");
+                        }
+                    },
+                    error: function (err) {
+                        alert("Something Went Wrong");
+                    }
+                });
+        }
+    </script>
+}

@@ -1,0 +1,263 @@
+﻿<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcome-list shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="breadcome-heading">
+                                <h2>مرحبا بك فى ATMA</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="breadcome-menu">
+                                <li>
+                                    <a asp-controller="Home" asp-action="Index">الرئيسية</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li>
+                                    <span class="bread-blod">سلايدر الرئيسي </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcome End-->
+<!--  System Start-->
+<div class="basic-form-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <!---- tab ----->
+
+                <div class="sparkline9-list shadow-reset mg-b-30">
+                    <div class="sparkline9-hd">
+                        <div class="main-sparkline9-hd">
+                            <h1>اضافة سليدر</h1>
+                            <div class="sparkline9-outline-icon">
+                                <a type="button" class="Additme btn-custon-four btn-warning btn-xs" href="#" data-toggle="modal" data-target="#addSlider" data-toggle="modal" data-target="#addSlider">
+                                    <span class="fa fa-pencil"></span>اضافة
+                                </a>
+                                <span class="sparkline9-collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </span>
+                                <span class="sparkline9-collapse-close"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sparkline9-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <div id="toolbar1">
+                                <!-- <select class="form-control">
+                                    <option value="">Export Basic</option>
+                                    <option value="all">Export All</option>
+                                    <option value="selected">Export Selected</option>
+                                </select> -->
+                            </div>
+                            <table id="ItemsTable" data-toggle="table" data-pagination="true" data-search="true"
+                                   data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true"
+                                   data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                   data-cookie-id-table="SliderId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar1">
+                                <thead>
+                                    <tr>
+                                        <th data-field="sliderId">ID</th>
+                                        <th data-field="mainSlider">نوع السلايدر</th>
+                                        <th data-field="sliderTitleAr">عنوان عربى </th>
+                                        <th data-field="sliderTitleEn">عنوان انجليزى</th>
+                                        <th data-field="contentAr">محتوى عربى</th>
+                                        <th data-field="contentEn">محتوى انجليزى</th>
+                                        <th data-field="photo">الصوره</th>
+                                        <th data-field="Edit">تعديل</th>
+                                        <th data-field="Delete">مسح</th>
+                                    </tr>
+                                </thead>
+                                <!--<tbody>
+
+                                </tbody>-->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!--- End tab --->
+            </div>
+        </div>
+    </div>
+</div>
+<!--  System end-->
+<!--- modal Display image--->
+<div id="notpopUp" class="modal modal-adminpro-general fullwidth-popup-InformationproModal PrimaryModal-bgcolor" role="dialog">
+    <div class="modal-dialog fade bounceIn animated in">
+        <div class="modal-content">
+            <div class="modal-close-area modal-close-df">
+                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+            </div>
+            <div class="modal-body">
+                <div class="modalPhotoV">
+                    <img id="ViewImage" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--- end modal  --->
+<!--- modal Addslider--->
+<div id="addSlider" class="modal modal-adminpro-general fullwidth-popup-InformationproModal PrimaryModal-bgcolor" role="dialog">
+    <div class="modal-dialog fade bounceIn animated in">
+        <div class="modal-content">
+            <div class="modal-close-area modal-close-df">
+                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+            </div>
+            <div class="modal-body">
+                <div class="form-group-inner">
+                    <label>نوع السليدر </label>
+                    <div class="form-input-area">
+                        <select class="form-control custom-select-value valid" id="SlidersType" name="SlidersType" aria-invalid="false">
+                            <option value="1">Main</option>
+                            <option value="2">Secondary</option>
+                        </select>
+                        <i class="fa fa-globe form-user" aria-hidden="true"></i>
+
+                    </div>
+                </div>
+                <div class="form-group-inner">
+                    <label>عنوان عربى </label>
+                    <div class="form-input-area">
+                        <input id="TitleAr" type="text" class="form-control" name="name" placeholder=" عنوان عربى ">
+                        <i class="fa fa-edit form-user" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="form-group-inner">
+                    <label>محتوى عربى</label>
+                    <div class="form-textarea-area">
+                        <textarea id="ContentAr" name="review" class="form-control" placeholder="محتوى"></textarea>
+                        <i class="fa fa-text-height form-user"></i>
+                    </div>
+                </div>
+
+                <div class="form-group-inner">
+                    <label>عنوان انجليزى </label>
+                    <div class="form-input-area">
+                        <input id="TitleEn" type="text" class="form-control" name="name" placeholder=" عنوان انجليزى ">
+                        <i class="fa fa-edit form-user" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="form-group-inner">
+                    <label>محتوى انجليزى</label>
+                    <div class="form-textarea-area">
+                        <textarea id="ContentEn" name="review" class="form-control" placeholder="محتوى"></textarea>
+                        <i class="fa fa-text-height form-user"></i>
+                    </div>
+                </div>
+                <div class="modalPhotoV">
+                    <img id="SliderImage" src="" alt="" />
+                </div>
+                <div class="form-group-inner">
+                    <label>صورة نوع الصنف </label>
+                    <div class="file-upload-inner ts-forms">
+                        <div class="input prepend-small-btn">
+                            <input type="file" id="SliderImg" onchange="CreateFilevalidation()" placeholder="عدل الصورة" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="CloseModel" type="button" class="btn btn-custon-three btn-danger">
+                    <span class="adminpro-icon adminpro-danger-error"></span> الغاء
+                </button>
+                <button id="btnCreateSlider" type="button" class="btn btn-custon-four btn-success">
+                    <span class="fa fa-save"></span>
+                    حفظ
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--- end modal  --->
+<!--- modal Edit Slider --->
+<div id="EditSlider" class="modal modal-adminpro-general fullwidth-popup-InformationproModal PrimaryModal-bgcolor" role="dialog">
+    <div class="modal-dialog fade bounceIn animated in">
+        <div class="modal-content">
+            <div class="modal-close-area modal-close-df">
+                <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+            </div>
+            <label hidden id="EID"></label>
+            <div class="form-group-inner">
+                <label>نوع السليدر </label>
+                <div class="form-input-area">
+                    <select class="form-control custom-select-value valid" id="ESlidersType" name="ESlidersType" aria-invalid="false" disabled>
+                        <option value="1">Main Slider</option>
+                        <option value="2">Sub Slider</option>
+                    </select>
+                    <i class="fa fa-globe form-user" aria-hidden="true"></i>
+
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-group-inner">
+                    <label>عنوان عربى </label>
+                    <div class="form-input-area">
+                        <input id="ETitleAr" type="text" class="form-control" name="name" placeholder=" عنوان عربى ">
+                        <i class="fa fa-edit form-user" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="form-group-inner">
+                    <label>محتوى عربى</label>
+                    <div class="form-textarea-area">
+                        <textarea id="EContentAr" name="review" class="form-control" placeholder="محتوى"></textarea>
+                        <i class="fa fa-text-height form-user"></i>
+                    </div>
+                </div>
+
+                <div class="form-group-inner">
+                    <label>عنوان انجليزى </label>
+                    <div class="form-input-area">
+                        <input id="ETitleEn" type="text" class="form-control" name="name" placeholder=" عنوان انجليزى ">
+                        <i class="fa fa-edit form-user" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div class="form-group-inner">
+                    <label>محتوى انجليزى</label>
+                    <div class="form-textarea-area">
+                        <textarea id="EContentEn" name="review" class="form-control" placeholder="محتوى"></textarea>
+                        <i class="fa fa-text-height form-user"></i>
+                    </div>
+                </div>
+                <div class="EmodalPhotoV">
+                    <img id="ESliderImage" src="" alt="" />
+                </div>
+                <div class="form-group-inner">
+                    <label>صورة نوع الصنف </label>
+                    <div class="file-upload-inner ts-forms">
+                        <div class="input prepend-small-btn">
+                            <input type="file" id="ESliderImg" placeholder="عدل الصورة" onchange="Filevalidation()" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="ECloseModel" type="button" class="btn btn-custon-three btn-danger">
+                    <span class="adminpro-icon adminpro-danger-error"></span> الغاء
+                </button>
+                <button id="EbtnEditSlider" type="button" class="btn btn-custon-four btn-success">
+                    <span class="fa fa-save"></span>
+                    حفظ
+                </button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--- end modal  --->
+
+@section scripts
+{
+    <script src="~/ProjectJSFiles/MinifiedJsFiles/MainSlider.min.js"></script>
+}

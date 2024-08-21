@@ -1,0 +1,422 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+
+<!-- Breadcome start-->
+<div class="breadcome-area mg-b-30 small-dn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcome-list shadow-reset">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="breadcome-heading">
+                                <h2>مرحبا بك فى ATMA</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="breadcome-menu">
+                                <li>
+                                    <a asp-controller="Home" asp-action="Index">الرئيسية</a> <span class="bread-slash">/</span>
+                                </li>
+                                <li>
+                                    <span class="bread-blod">المركز الاعلامى </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  System Start-->
+<div class="basic-form-area mg-b-15">
+
+    <div class="col-lg-12">
+        <!---- tab ----->
+
+        <div class="sparkline9-list shadow-reset mg-b-30">
+            <div class="sparkline9-hd">
+                <div class="main-sparkline9-hd">
+                    <h1>الاخبار</h1>
+                    <div class="sparkline9-outline-icon">
+                        @if (@HttpContextAccessor.HttpContext.Session.GetString("Role") == "1" )//admin
+                        {
+                            <button type="button" class="Additme btn-custon-four btn-warning btn-xs" data-toggle='modal' data-target='#AddModal' id="ADD">
+                                <span class="fa fa-pencil"></span>إضافة
+                            </button>
+                        }
+                        
+                        <span class="sparkline9-collapse-link">
+                            <i class="fa fa-chevron-up"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="sparkline9-graph">
+                <div class="datatable-dashv1-list custom-datatable-overright">
+                    <div id="toolbar">
+                    </div>
+                    <table id="ToaaFilesTable" data-toggle="table" data-pagination="true" data-search="false" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true"
+                           data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true"
+                           data-toolbar="#toolbar">
+                        <thead>
+                            <tr>
+                                <th data-field="ToaaFileId">تاريخ اخر تعديل</th>
+                                <th data-field="ToaaFileType">العنوان </th>
+                                <th data-field="ToaaFileNameAr">المحتوى</th>
+                                <th data-field="link"> الرابط</th>
+                                <th data-field="image"> الصورة </th>
+                                <th data-field="action">الاوامر</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--- End tab --->
+</div>
+<!--  System end-->
+<!-- Modal Add-->
+<div class="modal" id="AddModal">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">إضافة خبر</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <input type="hidden" id="DepartmentId" />
+                            <label>العنوان</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="title" placeholder=" العنوان">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <label>الخبر</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="article" placeholder=" الخبر	">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <label>الرابط</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="link" placeholder=" الرابط	">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner ">
+                            <label>إختار الصورة</label>
+                            <div class="file-upload-inner ts-forms">
+                                <div class="input prepend-small-btn">
+                                    <div class="file-button">
+                                        تحميل <input type="file" id="image" name="fileTables" onchange="document.getElementById('Att').value = this.value;" class="valid" aria-invalid="false">
+                                    </div>
+                                    <input type="text" id="Att" placeholder="تحميل الصورة" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="AddFile()">Save </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal Add end-->
+<!--Modal Edit start-->
+<div class="modal" id="EditModal">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">تعديل الخبر</h5>
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <input type="hidden" id="MediaId" />
+                            <label>العنوان</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="editTitle" placeholder=" العنوان	">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <label>الخبر</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="editArticle" placeholder=" الخبر	">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner">
+                            <label>الرابط</label>
+                            <div class="form-input-area">
+                                <input type="text" class="form-control" id="editLink" placeholder=" الرابط	">
+                                <i class="fa fa-globe form-user" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group-inner ">
+                            <label>إختار الصورة</label>
+                            <div class="file-upload-inner ts-forms">
+                                <div class="input prepend-small-btn">
+                                    <div class="file-button">
+                                        تحميل <input type="file" id="EditImage" name="EditImage" onchange="document.getElementById('Attach').value = this.value;" class="valid" aria-invalid="false">
+                                    </div>
+                                    <input type="text" id="Attach" placeholder="لتغيير الصورة قم برفع صورة اخرى" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="EditFile()">Change data </button>
+                <div id='loadingDiv'>
+                    Please wait...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--mModal Edit end-->
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var customersDataString = sessionStorage.getItem("Role");
+            $('#loadingDiv').hide(); // to tell the user we are loading from db in modals
+            var table = $("#ToaaFilesTable").dataTable({
+                "processing": true, // for show progress bar
+                "serverSide": true, // for process server side
+                "filter": false, // this is for disable filter (search box)
+                "orderMulti": false, // for disable multiple column at once
+                "dom": 'Bfrtip',
+                "ajax": {
+                    "url": "/mediacenter/getall",
+                    "type": "POST",
+                    // "datatype": "json"
+                },
+                "columns": [
+                    { //date column
+                        "data": null, orderable: false, render: function (data, type, row) {
+                            var date = new Date(row.dateAdded);
+                            var year = date.getFullYear();
+                            var month = String(date.getMonth() + 1).padStart(2, '0');
+                            var day = String(date.getDate()).padStart(2, '0');
+                            var formattedDate = year + '-' + month + '-' + day;// Format the date as "YYYY-MM-DD"
+                            return '<div>' + formattedDate + '</div>'
+                        }
+                    },
+                    { "data": "title", "name": "title", "autoWidth": true },
+                    { "data": "article", "name": "article", "autoWidth": true },
+                    { "data": "link", "name": "link", "autoWidth": true },
+                    {
+                        "data": null, orderable: false, render: function (data, type, row) {
+                            return (!row.image) ? "no image found" : '<a href="/mediacenter/getImage?mediaId=' + row.id + '"><img src="/mediacenter/getImage?mediaId=' + row.id + '" alt="" /></a>'
+                        }
+                    }
+                     , {
+                        data: null, orderable: false, render: function (data, type, row) { //delete and update button
+                             if (@HttpContextAccessor.HttpContext.Session.GetString("Role") == "1") {
+                                 return `<div class='btn-group project-list-action'><button class='btn btn-danger btn-xs' onclick=Delete(${row.id}) > <i class='fa fa-close'></i> حذف </button> </div>
+                            \ <button class='btn btn-info btn-xs' data-toggle='modal' data-target='#EditModal' 
+                            onclick="EditData('${row.id}','${row.title}','${row.article}','${row.link}')"> \
+                                      <i class='fa fa-pencil' > </i> تعديل</button > `}
+                                      else return `<p> hello form else <p>`
+
+                                
+                        }
+                    } 
+                ],
+                buttons: [
+                    {
+                        extend: 'collection',
+                        text: 'Export',
+                        buttons: [
+                            'copy',
+                            'excel',
+                        ]
+                    }
+                ]
+            });
+            $('#ToaaFilesTable_filter input').hide();
+            $('#ADD').click(function () {
+                $('#title').val("")
+                $('#article').val("");
+                $('#image').children().remove();
+                $('#image').val("");
+                $('link').val("");
+                $('#Att').val("");
+            });
+        });
+        function Delete(ItemId) {
+            if (confirm("Are you sure you want to delete ...?")) {
+                $('#loadingDiv').show();
+                $.ajax({
+                    url: '/mediaCenter/DeleteMedia?ID=' + ItemId,
+                    type: "GET",
+                    success: function (data) {
+                        if (data.result == "OK") {
+                            oTable = $('#ToaaFilesTable').DataTable();
+                            oTable.draw();
+                        }
+                        else if (data.result == "Erorr")
+                            alert(data.Message);
+                    },
+                    error: function (err) {
+                        alert("Something Went Wrong!...");
+                    }
+                });
+            }
+            else {
+                return false;
+            }
+        }
+        function EditData(ItemId, title, article,link) {
+            $("#MediaId").val(`${ItemId}`);
+            $("#editTitle").val(`${title}`);
+            $("#editArticle").val(`${article}`);
+            $("#editLink").val(`${link}`);
+            if ($("#EditImage").val() == "null") {
+                $("#EditImage").val("");
+            }
+        }
+        function EditFile() {
+            $('#loadingDiv').show();
+            var file = document.getElementById("EditImage").files[0];
+            var fileLength = document.getElementById("EditImage").files.length;
+            if (fileLength > 0) {
+                if (file.size > 20971520) //20 MB
+                {
+                    alert("حجم الملف لا يجب أن يكون أكبر من 20 ميجا بايت")
+                    return;
+                }
+
+            }
+            var id = $("#MediaId").val();
+            var title = $("#editTitle").val();
+            var article = $("#editArticle").val();
+            var link = $("#editLink").val();
+            var data = new FormData();
+            data.append("image", file);
+            data.append("link",link)
+            data.append("title", title);
+            data.append("article", article);
+            data.append("id", id);
+            $.ajax({
+                url: '/mediaCenter/editMedia',
+                type: 'POST',
+                data: data,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    if (data.result == "OK") {
+                        $('#EditModal').modal('hide');
+                        oTable = $('#ToaaFilesTable').DataTable();
+                        oTable.draw();
+                    }
+                    else if (data.result == "Erorr")
+                        alert(data.Message);
+                },
+                error: function (err) {
+                    alert("Something Went Wrong!...");
+                }
+            });
+        }
+        function AddFile() {
+            var file = document.getElementById("image").files[0];
+            var fileLength = document.getElementById("image").files.length;
+
+            if (!file) {
+                alert("من فضلك ادخل ملف");
+                return;
+            }
+            if (fileLength > 0) {
+                if (file.size > 20971520) //20 MB
+                {
+                    alert("حجم الملف لا يجب أن يكون أكبر من 20 ميجا بايت")
+                    return;
+                }
+
+            }
+
+            var title = $("#title").val();
+            var article = $("#article").val();
+            var link = $("#link").val();
+            // var GovText = $("#FileType option:selected").text();
+
+
+            var data = new FormData();
+            data.append("title", title);
+            data.append("article", article);
+            data.append("link", link);
+            data.append("image", file);
+            // data.append("id", Gov);
+            // data.append("FileType", GovText);
+            $.ajax({
+                url: '/mediacenter/createmedia',
+                data: data,
+                type: 'POST',
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    if (data.result == "OK") {
+                        $('#AddModal').modal('hide');
+                        oTable = $('#ToaaFilesTable').DataTable();
+                        oTable.draw();
+                    }
+                    else if (data.result == "ERROR")
+                        alert(data.Message);
+                },
+                error: function (err) {
+                    alert("Something Went Wrong!...");
+                }
+            });
+        }
+    </script>
+}

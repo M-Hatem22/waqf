@@ -1,0 +1,332 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Http
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["HomePage"];
+}
+
+<!-- Slider -->
+<header class="header slider-fade">
+    <div class="owl-carousel owl-theme">
+        <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
+        <div class="text-left item bg-img bgSlider1" data-overlay-dark="3" data-background="~/img/slider/1.jpg">
+            <div class="v-middle caption mt-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <h1>@Localizer["TitleSlider1"]</h1>
+                            <p>
+                                <br>
+                            </p>
+                            <div class="butn-light mt-30 mb-30">
+                                <a href="/Home/projects"
+                                   target="_blank"><span>@Localizer["ShowProjects"]</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-left item bg-img bgSlider2" data-overlay-dark="4" data-background="~/img/slider/2.jpg">
+            <div class="v-middle caption mt-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <h1>@Localizer["TitleSlider1"]</h1>
+                            <p>
+                                <br>
+                            </p>
+                            <div class="butn-light mt-30 mb-30">
+                                <a href="/Home/projects"
+                                   target="_blank"><span>@Localizer["ShowProjects"]</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-left item bg-img bgSlider3" data-overlay-dark="4" data-background="~/img/slider/3.jpg">
+            <div class="v-middle caption mt-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <h1>@Localizer["TitleSlider1"]</h1>
+                            <p>
+                                <br>
+                            </p>
+                            <div class="butn-light mt-30 mb-30">
+                                <a href="/Home/projects"
+                                   target="_blank"><span>@Localizer["ShowProjects"]</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-left item bg-img bgSlider4" data-overlay-dark="4" data-background="~/img/slider/4.jpg">
+            <div class="v-middle caption mt-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <h1>@Localizer["TitleSlider1"]</h1>
+                            <p>
+                                <br>
+                            </p>
+                            <div class="butn-light mt-30 mb-30">
+                                <a href="/Home/projects"
+                                   target="_blank"><span>@Localizer["ShowProjects"]</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-left item bg-img bgSlider5" data-overlay-dark="3" data-background="~/img/slider/5.jpg">
+            <div class="v-middle caption mt-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <h1>@Localizer["TitleSlider1"]</h1>
+                            <p>
+                                <br>
+                            </p>
+                            <div class="butn-light mt-30 mb-30">
+                                <a href="/Home/projects"
+                                   target="_blank"><span>@Localizer["ShowProjects"]</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-left item bg-img bgSlider6" data-overlay-dark="4" data-background="~/img/slider/6.jpg">
+            <div class="v-middle caption mt-30">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <h1>@Localizer["TitleSlider1"]</h1>
+                            <p>
+                                <br>
+                            </p>
+                            <div class="butn-light mt-30 mb-30">
+                                <a href="/Home/projects"
+                                   target="_blank"><span>@Localizer["ShowProjects"]</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Left Panel -->
+    <div class="left-panel">
+        <ul class="social-left clearfix">
+            <li>
+                <a href="https://www.facebook.com/Sheikhkitchensa?mibextid=ZbWKwL" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/sheikhkitchensa" target="_blank"><i class="fa fa-twitter "></i></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/sheikhkitchensa/" target="_blank">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/channel/UCmqaUEreJEpWMGSFkbpVigg" target="_blank">
+                    <i class="fa fa-youtube"></i>
+                </a>
+            </li>
+            @*<li>
+                <a href="https://wa.me/966505440659" target="_blank">
+                    <i class="fa fa-whatsapp"></i>
+                </a>
+            </li>*@
+        </ul>
+    </div>
+</header>
+
+<!-- Content -->
+<div class="content-wrapper">
+    <!-- Lines -->
+    <section class="content-lines-wrapper">
+        <div class="content-lines-inner">
+            <div class="content-lines"></div>
+        </div>
+    </section>
+    <!-- About -->
+    <section class="about section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 mb-30 animate-box" data-animate-effect="fadeInUp">
+                    <h2 class="section-title"><span>@Localizer["AboutTitle"]</span></h2>
+                    <p>
+                        @Localizer["WhoAreWe"]
+                    </p>
+                </div>
+                <div class="col-lg-6 col-sm-12 animate-box" data-animate-effect="fadeInUp">
+                    <div class="about-img">
+                        <div class="img"> <img src="~/img/about.jpg" class="img-fluid" alt=""> </div>
+                        <div class="about-img-2 about-buro">@Localizer["photoTitleHome"]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects -->
+    <section class="projects section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title"><span>@Localizer["OurProducts"]</span></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="~/img/Gallery/Kitchens/1.jpg" alt=""> </div>
+                            <div class="con">
+                                <h6><a href="/Home/projects">@Localizer["Products"]</a></h6>
+                                <h5><a href="/Home/projects'">@Localizer["Kitchens"]</a></h5>
+                                <div class="line"></div> <a href="/Home/projects">
+                                    <i class="ti-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="~/img/Gallery/Nursing-stations-receiving-counters/1.jpg" alt=""> </div>
+                            <div class="con">
+                                <h6><a href="/Home/projects">@Localizer["Products"]</a></h6>
+                                <h5><a href="/Home/projects">@Localizer["receivingCounters"]</a></h5>
+                                <div class="line"></div> <a href="/Home/projects">
+                                    <i class="ti-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="~/img/Gallery/Kitchen-cabinets/2.jpg" alt=""> </div>
+                            <div class="con">
+                                <h6><a href="/Home/projects">@Localizer["Products"]</a></h6>
+                                <h5><a href="/Home/projects">@Localizer["KitchenCabinets"]</a></h5>
+                                <div class="line"></div> <a href="/Home/projects">
+                                    <i class="ti-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="position-re o-hidden"> <img src="~/img/Gallery/Case-work/1.jpg" alt=""> </div>
+                            <div class="con">
+                                <h6><a href="/Home/projects">@Localizer["Products"]</a></h6>
+                                <h5><a href="/Home/projects">@Localizer["casework"] </a></h5>
+                                <div class="line"></div> <a href="/Home/projects">
+                                    <i class="ti-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services -->
+    <section class="services section-padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 animate-box" data-animate-effect="fadeInUp">
+                    <h2 class="section-title"><span>@Localizer["OurServices"]</span></h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="item">
+                        <a href="urban-design.cshtml">
+                            <img src="~/img/icons/icon-1.png" alt="">
+                            <!-- <h5>Urban Design</h5> -->
+                            <div class="line"></div>
+                            <p>
+                                @Localizer["FirstService"]
+                            </p>
+                            <div class="numb">01</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="item">
+                        <a href="planning.cshtml">
+                            <img src="~/img/icons/icon-2.png" alt="">
+                            <!-- <h5>Planing</h5> -->
+                            <div class="line"></div>
+                            <p>@Localizer["SecondService"]</p>
+                            <div class="numb">02</div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="item">
+                        <a href="decor-plan.cshtml">
+                            <img src="~/img/icons/icon-3.png" alt="">
+                            <!-- <h5>Decor Plan</h5> -->
+                            <div class="line"></div>
+                            <p>
+                                @Localizer["ThirdService"]
+                            </p>
+                            <div class="numb">03</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="item">
+                        <a href="decor-plan.cshtml">
+                            <img src="~/img/icons/icon-4.png" alt="">
+                            <!-- <h5>Decor Plan</h5> -->
+                            <div class="line"></div>
+                            <p>
+                               @Localizer["FourthService"]
+                            </p>
+                            <div class="numb">04</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo video - Testiominals -->
+    <section class="testimonials">
+        <div class="bgBanner2 background bg-img bg-fixed section-padding pb-0" data-background="img/banner2.jpg"
+             data-overlay-dark="3">
+            <div class="container">
+                <div class="row">
+                    <!-- Promo video -->
+                    <div class="col-md-12">
+                        <div class="vid-area">
+                            <div class="vid-icon">
+                                <a class="play-button vid" href="https://www.youtube.com/watch?v=9o9QHKkVTdE">
+                                    <svg class="circle-fill">
+                                        <circle cx="43" cy="43" r="39" stroke="#fff" stroke-width=".5"></circle>
+                                    </svg>
+                                    <svg class="circle-track">
+                                        <circle cx="43" cy="43" r="39" stroke="none" stroke-width="1" fill="none">
+                                        </circle>
+                                    </svg> <span class="polygon">
+                                        <i class="ti-control-play"></i>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="cont mt-15 mb-30">
+                                <h5>@Localizer["ViewPromoVideo"]</h5>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>

@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AbhaMall" xml:space="preserve">
+    <value>الأبهى مول</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>عن شركتنا</value>
+  </data>
+  <data name="Coffeeshops" xml:space="preserve">
+    <value>المقاهى</value>
+  </data>
+  <data name="CompletingtheWorkWithTheRequiredQualityandTime" xml:space="preserve">
+    <value>استكمال العمل بالجودة والكفاءة المطلوبين</value>
+  </data>
+  <data name="FirstService" xml:space="preserve">
+    <value>نقدم مجموعة واسعة من المنتجات التي ترضي مختلف الأذواق ، من التصميم الكلاسيكي إلى الحديث إلى التصميم حسب الطلب</value>
+  </data>
+  <data name="FourthService" xml:space="preserve">
+    <value>نقدم مجموعة واسعة من المنتجات التي ترضي مختلف الأذواق ، من التصميم الكلاسيكي إلى الحديث إلى التصميم حسب الطلب</value>
+  </data>
+  <data name="HomePage" xml:space="preserve">
+    <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="HugeProjectsinSaudiArabia" xml:space="preserve">
+    <value>مشاريع ضخمة بالمملكة العربية السعودية</value>
+  </data>
+  <data name="Mission" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="Our" xml:space="preserve">
+    <value>عن</value>
+  </data>
+  <data name="OurMission" xml:space="preserve">
+    <value>مرضي دائمًا ، نحن في شيخ للمطابخ نسعى جاهدين لتزويد عملائنا بمجموعة متنوعة من حلول تصميم المطبخ ومنتجات عالية الجودة. &lt;br&gt;
+حديثة ، في الوقت المناسب وواسعة - جاذبية متنوعة ، مجموعاتنا تتراوح من التصاميم الحديثة إلى الكلاسيكية وتأخذ في الاعتبار الاختلافات في نمط حياة كل فرد. &lt;br&gt; &lt;br&gt;
+هدفنا هو تقديم جودة استثنائية وخدمات احترافية تحافظ على إرثنا وتجسد المستقبل</value>
+  </data>
+  <data name="OurProjects" xml:space="preserve">
+    <value>مشاريعنا</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>خدماتنا</value>
+  </data>
+  <data name="OurServicesDetails" xml:space="preserve">
+    <value>-	تنفيذ أعمال انشاء وتشطيب المباني التجارية والسكنية
+-	تنفيذ انشاء وتشطيب المنشآت الصناعية
+-	تنفيذ أعمال انشاء وتشطيب المشاريع الاستثمارية) المشافي – مولات – مباني ادارية – مجمعات (
+-	تنفيذ أعمال البنية التحتية</value>
+  </data>
+  <data name="OurVision" xml:space="preserve">
+    <value>الحرص على تنفيذ الأعمال بأعلى درجات الجودة والوقت المطلوب
+العمل على المساهمة في توطين الوظائف للسعوديين وخاصة الادارية منها
+العمل على تطوير أداء العمل والتنفيذ بالطرق الحديثة للحصول على الجودة واختصار وقت التنفيذ و
+مواكبة التطور الحاصل بالمملكة حسب رؤية 2030</value>
+  </data>
+  <data name="photoTitleHome" xml:space="preserve">
+    <value>شيخ المطابخ</value>
+  </data>
+  <data name="Projects" xml:space="preserve">
+    <value>المشاريع</value>
+  </data>
+  <data name="SecondService" xml:space="preserve">
+    <value>يتم تطوير تصميمات وعناصر جديدة باستمرار من قبل المصممين الموهوبين لدينا لجلب الابتكار إلى أنماط مختلفة من المطابخ والخزائن.</value>
+  </data>
+  <data name="ShowProjects" xml:space="preserve">
+    <value>عرض المشاريع</value>
+  </data>
+  <data name="STRENGTH" xml:space="preserve">
+    <value>قوتنا وسعتنا التشريحية</value>
+  </data>
+  <data name="STRENGTHDetails" xml:space="preserve">
+    <value>مطابخ الشيخ هي واحدة من أكبر الشركات المصنعة للمطابخ والخزائن المجهزة في المملكة العربية السعودية. بالإضافة إلى مقرها الرئيسي في الرياض ، تمتلك الشركة مرافق إنتاج خاصة بها وصالات عرض في جميع أنحاء المملكة. من النجارة الصغيرة في اليوم الذي بدأت فيه ، توظف الشركة اليوم أكثر من 396 موظفًا ضمن قوتها العاملة. &lt;br&gt; &lt;br&gt;
+
+الجودة والتصميم والابتكار هي فقط هدفنا الرئيسي لذلك قمنا بتطوير هيكل الشركة الذي يمكن أن يضمن أفضل خدمة لعملائنا. من قسم الإدارة الرئيسي لدينا إلى مصنع الإنتاج لدينا إلى صالات العرض المتميزة ، لقد حصلنا على مستوى عالٍ من الاعتراف بالعلامة التجارية والتعاطف بسبب تقاليدنا العريقة والتزامنا بالتميز.</value>
+  </data>
+  <data name="ThirdService" xml:space="preserve">
+    <value>نحن دائمًا على اطلاع دائم بالاتجاهات الجديدة التي تؤثر على عالم المطابخ والتقنيات ذات الصلة.</value>
+  </data>
+  <data name="ThirdServiceDetails" xml:space="preserve">
+    <value>(مستشفيات - مولات - مبانى ادارية - مجمعات)</value>
+  </data>
+  <data name="ViewPromoVideo" xml:space="preserve">
+    <value>مشاهدة الفيديو </value>
+  </data>
+  <data name="Vision" xml:space="preserve">
+    <value>الرؤية</value>
+  </data>
+  <data name="WeAre" xml:space="preserve">
+    <value>نحن</value>
+  </data>
+  <data name="WeKeenToProvideTheBest" xml:space="preserve">
+    <value>دائما نسعى لتقديم الافضل</value>
+  </data>
+  <data name="Who" xml:space="preserve">
+    <value>من</value>
+  </data>
+  <data name="WhoAreWe" xml:space="preserve">
+    <value>تأسست الشركة عام 1986 في قلب المملكة العربية السعودية ، الشيخ مطابخ هو أقدم اسم في صناعة المطابخ والمفاصل. بناءً على عقود من الإرث العائلي ، اتبعنا خطوات مؤسستنا العظيمة.
+&lt;br&gt; &lt;br&gt;
+
+شيخ كيتشنز هي شركة ديناميكية ومبتكرة وثابتة تلتزم باستخدام معرفتها التقنية والصناعية الواسعة لتحقيق رضا العملاء التام.
+مع التركيز على تحقيق أهدافنا الطموحة والسعي لتحقيق خططنا الطموحة ، يعد Sheikh Kitchens فريقًا يعمل عن كثب مع المصممين والمهندسين المعماريين السمعة الدولية في تقديم جميع أنواع الحلول المخصصة بيئات العمل المخصصة ، بالإضافة إلى منتجاتنا القياسية.</value>
+  </data>
+</root>

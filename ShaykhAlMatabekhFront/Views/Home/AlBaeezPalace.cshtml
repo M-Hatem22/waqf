@@ -1,0 +1,152 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Http
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["AlBaeezPalace"];
+}
+
+
+<!-- Content -->
+<!-- Lines -->
+<section class="content-lines-wrapper">
+    <div class="content-lines-inner">
+        <div class="content-lines"></div>
+    </div>
+</section>
+<!-- Header Banner -->
+<section class="banner-header banner-img valign bg-img bg-fixed" data-overlay-light="3" data-background="~/img/banner.jpg">
+    <!-- Left Panel -->
+    <div class="left-panel"></div>
+</section>
+<!-- Project Page  -->
+<section class="section-padding2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title2">@Localizer["AlBaeezPalace"]</h2>
+            </div>
+        </div>
+        <div class="row mt-30">
+            <div class="col-md-6 gallery-item">
+                <a href="~/img/projects/2-Al Baeez Palace/1.jpeg" title="Architecture" class="img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/projects/2-Al Baeez Palace/1.jpeg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-item">
+                <a href="~/img/projects/2-Al Baeez Palace/2.jpeg" title="Architecture" class="img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/projects/2-Al Baeez Palace/2.jpeg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-item">
+                <a href="~/img/projects/2-Al Baeez Palace/3.jpeg" title="Architecture" class="img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/projects/2-Al Baeez Palace/3.jpeg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6 gallery-item">
+                <a href="~/img/projects/2-Al Baeez Palace/4.jpeg" title="Architecture" class="img-zoom">
+                    <div class="gallery-box">
+                        <div class="gallery-img"> <img src="~/img/projects/2-Al Baeez Palace/4.jpeg" class="img-fluid mx-auto d-block" alt="work-img"> </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Prev-Next Projects -->
+<section class="projects-prev-next">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                    <div class="projects-prev-next-left">
+                        <a href="cotton-house.html"> <i class="ti-arrow-left"></i> @Localizer["PreviousProject"]</a>
+                    </div> <a href="/Home/projects"><i class="ti-layout-grid3-alt"></i></a>
+                    <div class="projects-prev-next-right"> <a href="stonya-villa.html">Next Project <i class="ti-arrow-right"></i></a> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Promo video - Testiominals -->
+<section class="testimonials">
+    <div class="bgBanner2 background bg-img bg-fixed section-padding pb-0" data-background="img/banner2.jpg"
+         data-overlay-dark="3">
+        <div class="container">
+            <div class="row">
+                <!-- Promo video -->
+                <div class="col-md-12">
+                    <div class="vid-area">
+                        <div class="vid-icon">
+                            <a class="play-button vid" href="https://youtu.be/7teT7_lnOlE">
+                                <svg class="circle-fill">
+                                    <circle cx="43" cy="43" r="39" stroke="#fff" stroke-width=".5"></circle>
+                                </svg>
+                                <svg class="circle-track">
+                                    <circle cx="43" cy="43" r="39" stroke="none" stroke-width="1" fill="none">
+                                    </circle>
+                                </svg> <span class="polygon">
+                                    <i class="ti-control-play"></i>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="cont mt-15 mb-30">
+                            <h5>@Localizer["ViewPromoVideo"]</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testiominals -->
+                <!-- <div class="col-md-5 offset-md-1">
+                    <div class="testimonials-box animate-box" data-animate-effect="fadeInUp">
+                        <div class="head-box">
+                            <h4>What Client's Say?</h4>
+                        </div>
+                        <div class="owl-carousel owl-theme">
+                            <div class="item"> <span class="quote"><img src="img/quot.png" alt=""></span>
+                                <p>Architect dapibus augue metus the nec feugiat erat hendrerit nec. Duis ve
+                                    ante the lemon sanleo nec feugiat erat hendrerit necuis ve ante.</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="img/team/1.jpg" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>Jason Brown</h6> <span>Crowne Plaza Owner</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item"> <span class="quote">
+                                    <img src="img/quot.png" alt="">
+                                </span>
+                                <p>Interior dapibus augue metus the nec feugiat erat hendrerit nec. Duis ve ante
+                                    the lemon sanleo nec feugiat erat hendrerit necuis ve ante.</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="img/team/2.jpg" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>Emily White</h6> <span>Armada Owner</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item"> <span class="quote">
+                                    <img src="img/quot.png" alt="">
+                                </span>
+                                <p>Urban dapibus augue metus the nec feugiat erat hendrerit nec. Duis ve ante
+                                    the lemon sanleo nec feugiat erat hendrerit necuis ve ante.</p>
+                                <div class="info">
+                                    <div class="author-img"> <img src="img/team/4.jpg" alt=""> </div>
+                                    <div class="cont">
+                                        <h6>Jesica Smith</h6> <span>Alsa Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>

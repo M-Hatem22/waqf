@@ -1,0 +1,74 @@
+﻿@model List<EgyVisionCore.Entities.EgyVision.VM.ProjectCoverAttachmentViewVM>;
+
+@{
+    ViewData["Title"] = "Projects";
+    //Layout = "~/Views/Home/Index.cshtml";
+}
+<div class="primary proojects projects_content">
+
+    <div class="row">
+        @await Component.InvokeAsync("LeftSide")
+        <div class="col-lg-11 px-0">
+            <div class="item">
+                <div class="cover">
+                    <div class="">
+                        <div class="row">
+
+                            <div class="container">
+
+                                <!--ourprojects information-->
+                                <div class="ourprojects_section py-4 px-5">
+                                    <div class="">
+                                        <!---Gallarey ourprojects-->
+                                        <div class="Gallarey_ourprojects text-white p-4">
+                                            <div class="who_are_u Gallarey  my-1">
+                                                <h3 class="text-center p-3 wow bounceIn" data-wow-duration="1s" data-wow-delay="3.1s" data-wow-offset="100">
+                                                    Our Projects
+                                                </h3>
+                                                <div class="p-projects wow zoomIn" data-wow-duration="1s" data-wow-delay="3.3s" data-wow-offset="100">
+                                                    <div class="" style="margin-top:20px;">
+                                                        <div class=" ">
+                                                            <div class="tab-content Gallarey my-4" id="pills-tabContent">
+                                                                <div class="tab-pane fade show active" id="showall" role="tabpanel"
+                                                                     aria-labelledby="showall-tab">
+                                                                    <div class="row">
+                                                                        @foreach (var item in Model)
+                                                                        {
+                                                                            var base64 = Convert.ToBase64String(item.AttachmentFile);
+                                                                            var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                                                                            <div class="col-md-4 col-sm-6 col-xs-12  mb-2">
+                                                                                <a href="/Home/ProjectDetails?projectId=@item.ProjectId">
+                                                                                    <figure class="snip1584" data-toggle="modal" data-target="#myModal" id="2" data-toggle="modal" data-target="#myModal">
+                                                                                        <img class="card-img" 
+                                                                                             src=@imgSrc alt="">
+                                                                                        <figcaption>
+                                                                                            <h5>@item.ProjectTitleEn </h5>
+                                                                                            <h6>Project</h6>
+                                                                                    </figure>
+                                                                                </a>
+                                                                            </div>
+                                                                        }
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--================Header Area =================-->
+                        </div>
+                    </div>
+                </div>
+                <!--footer-->
+                @await Component.InvokeAsync("Footer")
+            </div>
+        </div>
+        @await Component.InvokeAsync("RightSide")
+    </div>
+
+</div>

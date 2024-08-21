@@ -1,0 +1,106 @@
+﻿@using Microsoft.AspNetCore.Http.Features
+@inject IViewLocalizer Localizer
+
+@model BackEgyVision.Models.LoginModel
+
+
+@{
+    var consentFeature = Context.Features.Get<ITrackingConsentFeature>
+    ();
+    var cookieString = consentFeature?.CreateConsentCookie();
+
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ATMA</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+            ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Bootstrap CSS
+            ============================================ -->
+    <link rel="stylesheet" href="~/css/bootstrap-rtl.css">
+    <!-- Bootstrap CSS
+            ============================================ -->
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <!-- animate CSS
+            ============================================ -->
+    <link rel="stylesheet" href="~/css/animate.css">
+    <!-- form CSS
+        ============================================ -->
+    <link rel="stylesheet" href="~/css/form.css">
+    <!-- style CSS
+            ============================================ -->
+    <link rel="stylesheet" href="~/css/style-ar.css">
+</head>
+<body>
+    <div class="ac_overlay"></div>
+    <div class="login">
+        <form class="form" asp-action="Login" method="post" id="frmPost">
+            <div class="Logo"><img src="~/img/logo/logo.png" border="0" /></div>
+            <h2>تسجيل الدخول إلى حسابك</h2>
+            @Html.AntiForgeryToken()
+
+        <div class="InputLogin">
+            <div class="form-group-inner">
+                <div class="form-input-area">
+                    <input asp-for="Email" class="" placeholder="@Localizer[" Email"]" id="username" />
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    <i class="fa fa-user form-user" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="form-group-inner">
+                <div class="form-input-area">
+                    <input asp-for="Password" class="" type="password" placeholder="@Localizer[" Password"]" />
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    <i class="fa fa-unlock-alt form-user" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+            <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" id="password" />
+            @*<span class="ForgetPass">@Localizer["ForgetPass"]<a href="/Account/ForgotPassword">&nbsp;&nbsp;@Localizer["ForgotPassword"]</a></span>*@
+            <div style="padding: 0 ">
+                <button id="btnSubmit" class="button ButGreen ButCart Loginbut" type="submit">
+                    <i class="fa fa-paper-plane hvr-icon"></i>@Localizer["Login"]
+                </button>
+            </div>
+        </form>
+        <div class="cta"><a href="/Account/ForgotPassword">@Localizer["ForgotPassword"] ?</a></div>
+    </div>
+
+    <!-- Footer Start-->
+    <!-- Footer End-->
+    <!-- jquery
+        ============================================ -->
+    <script src="~/js/vendor/jquery-1.11.3.min.js"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- jquery.gall.min
+        ============================================ -->
+    <script src="~/js/jquery.gall.min.js"></script>
+    <!-- main JS
+        ============================================ -->
+     <script>
+        $(window).load(function () {
+
+            $(".loading-overlay .loader").fadeOut(500,
+                function () {
+                    $(this).parent().fadeOut(500,
+                        function () {
+                            //show the scroll
+                            $("body").css("overflow", "auto");
+                            $(this).remove();
+
+                        });
+                });
+
+        });
+    </script> 
+</body>
+</html>

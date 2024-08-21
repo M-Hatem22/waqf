@@ -1,0 +1,153 @@
+/***@media***/
+
+@media (min-width: 1200px) {
+
+}
+@media (min-width: 992px) and (max-width: 1199px){
+
+}
+
+@media screen and (max-width: 991px) {
+	.navbar-nav {
+    margin: 7.5px 0;
+	}
+	.content-inner-all {
+		margin-right: 60px !important;
+	}
+	.mini-navbar .content-inner-all {
+		margin-right: 60px !important;
+	}
+	.fixed-header-top {
+		right: 60px;
+	}
+	.mini-navbar .fixed-header-top {
+		right: 60px;
+	}
+	.mini-navbar .header-drl-controller-btn.btn-info{
+		position: relative;
+		right: 140px;
+		z-index: 1111;
+	}
+	#sidebar.active {
+		z-index: 1111;
+	}
+	.OverViwe {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		display: none;
+		overflow: hidden;
+		-webkit-overflow-scrolling: touch;
+		outline: 0;
+		background: 
+		rgba(0,0,0,0.6);
+	}
+	.mini-navbar .OverViwe{
+		display: block;
+		
+	}
+	.mini-navbar .header-right-info{
+		display: none;
+		
+	}
+
+	.mini-navbar {
+		overflow: hidden;
+	}
+	.header-right-info .navbar-nav {
+		float: left;
+		padding: 11px 0px;
+	}
+	.left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li.open .left-menu-dropdown {
+		right: 61px;
+	
+	}
+}
+
+@media screen and (max-width:767px) {
+	.header-right-info .admin-name{
+		display: none;
+	}
+	.header-right-info .author-project-icon {
+		display: none;
+	}
+	.header-right-info ul.header-right-menu > li > a {
+		padding: 0px 10px 0px 0px;
+	}
+	.darklayout .breadcome-heading h2 {
+		margin: 0px;
+		text-align: center;
+	}
+	ul.breadcome-menu {
+		text-align: left;
+		text-align: center;
+		margin-top: 5px;
+	}
+	.left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li > a {
+		padding: 15px 17px;
+	}
+	#sidebar .sidebar-header {
+		padding: 12px 6px;
+	}
+	.left-custom-menu-adp-wrap ul.left-sidebar-menu-pro li .big-icon {
+		font-size: 22px;
+	}
+	.sparkline-hd, .smart-sparkline-hd, .sparkline7-hd, .sparkline8-hd, .sparkline9-hd, .sparkline10-hd, .sparkline11-hd, .sparkline12-hd, .sparkline13-hd, .sparkline14-hd, .sparkline15-hd, .sparkline16-hd {
+		padding: 15px 7px;
+	}
+	.sparkline-content, .sparkline7-graph, .sparkline8-graph, .sparkline9-graph, .sparkline10-graph, .sparkline11-graph, .sparkline12-graph, .sparkline13-graph, .sparkline14-graph, .sparkline15-graph, .sparkline16-graph {
+		padding: 20px 15px;
+	}
+	.daily-feed-img {
+		float: none;
+		width: 35%;
+		margin: 10px auto !important;
+	}
+	.daily-feed-content h4 {
+		padding: 0;
+	
+	}
+	.daily-feed-content .message-feed-single {
+		text-align: center;
+		margin: 10px 0 0px 0px;
+	}
+	.header-right-info ul.header-right-menu li .author-message-top {
+		right: auto;
+		left: -111px;
+		width: 260px;
+	}
+	.SearchHeader .form-group-inner {
+		display: block;
+	}
+	.SearchHeader .btn {
+		margin-right: 0;
+		width: 100%;
+		margin-top: 5px;
+	}
+	.header-right-info ul.header-right-menu li .admintab-wrap.menu-setting-wrap.dropdown-menu {
+		right: auto;
+		width: 260px;
+		padding: 15px;
+		left: -7px;
+	
+	}
+	.header-right-info ul.header-right-menu li .author-log {
+		right: auto;
+		left: -37px;
+	}
+	.header-right-info ul.header-right-menu li .notification-author {
+		right: auto;
+		left: -74px;
+		width: 280px;
+	}
+	.header-right-info .notification-author::before {
+	right: 70%;
+	}
+}
+
+@media screen and (max-width: 406px) {
+
+}

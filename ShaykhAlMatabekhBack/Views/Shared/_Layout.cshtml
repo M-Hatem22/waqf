@@ -1,0 +1,565 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico"/>
+    <title>ATMA</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <environment include="Development">
+        <!-- favicon
+    ============================================ -->
+        <link rel="shortcut icon" type="image/x-icon" href="~/img/favicon.ico">
+        <!-- Bootstrap CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/bootstrap-rtl.css">
+        <!-- Bootstrap CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/font-awesome.min.css">
+        <!-- adminpro icon CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/adminpro-custon-icon.css">
+        <!-- meanmenu icon CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/meanmenu.min.css">
+        <!-- mCustomScrollbar CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/jquery.mCustomScrollbar.min.css">
+        <!-- animate CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/animate.css">
+        <!-- form CSS
+    //============================================ -->
+        <link rel="stylesheet" href="~/css/form.css">
+        <!-- jvectormap CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/jvectormap/jquery-jvectormap-2.0.3.css">
+        <!-- normalize CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/data-table/bootstrap-table.css">
+        <link rel="stylesheet" href="~/css/data-table/bootstrap-editable.css">
+        <!-- normalize CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/normalize.css">
+        <!-- summernote CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/summernote.css">
+        <!-- charts CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/c3.min.css">
+        <!-- modals CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/modals.css">
+        <!-- dropzone CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/dropzone.css">
+        <!-- style CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/style-ar.css">
+        <!-- responsive CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/responsive-ar.css">
+        <!-- modernizr JS
+    ============================================ -->
+        <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
+        <!-- datatable JS
+    ============================================ -->
+        <link href="~/js/datatable/css/datatable.css" rel="stylesheet" />
+        <link href="~/js/datatable/css/datatable-bootstrap.css" rel="stylesheet" />
+        @RenderSection("Styles", required: false)
+    </environment>
+    <environment exclude="Development"></environment>
+
+    <environment include="Production">
+        <!-- favicon
+    ============================================ -->
+        <link rel="shortcut icon" type="image/x-icon" href="~/img/favicon.ico">
+        <!-- Bootstrap CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/bootstrap-rtl.css">
+        <!-- Bootstrap CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/font-awesome.min.css">
+        <!-- adminpro icon CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/adminpro-custon-icon.css">
+        <!-- meanmenu icon CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/meanmenu.min.css">
+        <!-- mCustomScrollbar CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/jquery.mCustomScrollbar.min.css">
+        <!-- animate CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/animate.css">
+        <!-- form CSS
+    //============================================ -->
+        <link rel="stylesheet" href="~/css/form.css">
+        <!-- jvectormap CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/jvectormap/jquery-jvectormap-2.0.3.css">
+        <!-- normalize CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/data-table/bootstrap-table.css">
+        <link rel="stylesheet" href="~/css/data-table/bootstrap-editable.css">
+        <!-- summernote CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/summernote.css">
+        <!-- normalize CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/normalize.css">
+        <!-- charts CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/c3.min.css">
+        <!-- modals CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/modals.css">
+        <!-- dropzone CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/dropzone.css">
+        <!-- style CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/style-ar.css">
+        <!-- responsive CSS
+    ============================================ -->
+        <link rel="stylesheet" href="~/css/responsive-ar.css">
+        <!-- modernizr JS
+    ============================================ -->
+        <script src="~/js/vendor/modernizr-2.8.3.min.js"></script>
+        <!-- datatable JS
+    ============================================ -->
+        <link href="~/js/datatable/css/datatable.css" rel="stylesheet" />
+        <link href="~/js/datatable/css/datatable-bootstrap.css" rel="stylesheet" />
+        @RenderSection("Styles", required: false)
+    </environment>
+    <environment exclude="Production">
+
+    </environment>
+    @RenderSection("Styles", required: false)
+
+</head>
+<body class="darklayout mini-navbar">
+    <div class="OverViwe"></div>
+    <div class="wrapper-pro">
+        <div class="left-sidebar-pro">
+            <nav id="sidebar" class="active">
+                <div class="sidebar-header" style="background: url('@Url.Content("~/img/bg.jpg")');">
+                    <a href="#">
+                        <img src="~/img/logo/logo.png" alt="" />
+                    </a>
+                    <h3>ATMA Tech</h3>
+                    <p>تحسين الموقع و التحديثات المستمرة</p>
+                    <strong><img src="~/img/logo/logo.png" alt="" /></strong>
+                </div>
+                <div class="left-custom-menu-adp-wrap">
+                    <ul class="nav navbar-nav left-sidebar-menu-pro">
+                        <li class="nav-item ">
+                            <a asp-controller="Home" asp-action="Index" role="button" aria-expanded="false" class="nav-link">
+                                <i class="fa big-icon fa-home"></i>
+                                <span class="mini-dn">نظرة عامة</span> <span class="indicator-right-menu mini-dn">
+                                    <i class="fa indicator-mn fa-angle-left"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                <i class="fa big-icon fa-clipboard"></i> <span class="mini-dn"> سلايدر </span> <span class="indicator-right-menu mini-dn">
+                                    <i class="fa indicator-mn fa-angle-left"></i>
+                                </span>
+                            </a>
+                            <div role="menu" class="dropdown-menu left-menu-dropdown animated flipInX">
+                                <a asp-controller="Slider" asp-action="MainSlider" class="dropdown-item"> السلايدر الرئيسي</a>
+                                @*<a asp-controller="Slider" asp-action="SecondarySlider" class="dropdown-item">السلايدر الفرعى</a>*@
+
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="AboutUs" role="button" aria-expanded="false" class="nav-link">
+                                <i class="fa big-icon fa-newspaper-o"></i>
+                                <span class="mini-dn">من نحن</span> <span class="indicator-right-menu mini-dn">
+                                    <i class="fa indicator-mn fa-angle-left"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="ContactUs" role="button" aria-expanded="false" class="nav-link">
+                                <i class="fa big-icon fa-phone"></i>
+                                <span class="mini-dn">تواصل معنا</span> <span class="indicator-right-menu mini-dn">
+                                    <i class="fa indicator-mn fa-angle-left"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Projects" asp-action="Index" role="button" aria-expanded="false" class="nav-link">
+                                <i class="fa big-icon fa-book"></i>
+                                <span class="mini-dn">المشاريع</span> <span class="indicator-right-menu mini-dn">
+                                    <i class="fa indicator-mn fa-angle-left"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="content-inner-all">
+            <!-- Header top area start-->
+            <div class="header-top-area">
+                <div class="fixed-header-top">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-6 col-sm-3 col-xs-3">
+                                <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
+                                    <i class="fa fa-bars"></i>
+                                </button>
+                                <div class="admin-logo logo-wrap-pro">
+                                    <a href="#">
+                                        <img src="~/img/logo/log.png" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-11 col-md-6 col-sm-9 col-xs-9">
+                                <div class="header-right-info">
+                                    <ul class="nav navbar-nav mai-top-nav header-right-menu">
+                                        <li class="nav-item dropdown">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="true" class="nav-link dropdown-toggle"><span class="fa fa-search"></span></a>
+                                            <div role="menu" class="author-message-top dropdown-menu animated flipInX">
+                                                <div class="message-single-top">
+                                                    <h1>بحث</h1>
+                                                </div>
+                                                <div class="SearchHeader">
+                                                    <div class="form-group-inner">
+                                                        <input type="text" class="form-control basic-ele-mg-b-10" placeholder=" Search"><button type="button" class="btn btn-custon-four btn-primary">
+                                                            <span class="fa fa-search"></span> Search
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                <i class="fa fa-bell-o" aria-hidden="true"></i><span class="indicator-nt"></span>
+                                            </a>
+                                            <div role="menu" class="notification-author dropdown-menu animated flipInX">
+                                                <div class="notification-single-top">
+                                                    <h1>الاخطارات</h1>
+                                                </div>
+                                                <ul class="notification-menu">
+                                                    <li>
+                                                        <a href="#">
+                                                            <div class="notification-icon">
+                                                                <span class="adminpro-icon adminpro-checked-pro"></span>
+                                                            </div>
+                                                            <div class="notification-content">
+                                                                <span class="notification-date">16 Sept</span>
+                                                                <h2>تم نشر كتاب جديد </h2>
+                                                                <p>عن الأحرف العربية بِسِتَّة حروف، قبل أن يجمعها "نصر بن عاصم"</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <div class="notification-icon">
+                                                                <span class="adminpro-icon adminpro-cloud-computing-down"></span>
+                                                            </div>
+                                                            <div class="notification-content">
+                                                                <span class="notification-date">16 Sept</span>
+                                                                <h2>تم قبول طلب</h2>
+                                                                <p>عن الأحرف العربية بِسِتَّة حروف، قبل أن يجمعها "نصر بن عاصم"</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">
+                                                            <div class="notification-icon">
+                                                                <span class="adminpro-icon adminpro-shield"></span>
+                                                            </div>
+                                                            <div class="notification-content">
+                                                                <span class="notification-date">16 Sept</span>
+                                                                <h2>تم رفض طلب</h2>
+                                                                <p>عن الأحرف العربية بِسِتَّة حروف، قبل أن يجمعها "نصر بن عاصم"</p>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                                <div class="notification-view">
+                                                    <a href="#">رؤية جميع الاخطارات</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
+                                                <span class="fa fa-user header-riht-inf"></span>
+                                                <span class="admin-name">مدير الحساب</span>
+                                                <span class="author-project-icon adminpro-icon adminpro-down-arrow"></span>
+                                            </a>
+                                            <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
+                                                <li>
+                                                    <a href="/Home/Profile">
+                                                        <span class="adminpro-icon adminpro-user-rounded author-log-ic"></span>الملف الشخصى
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <span class="adminpro-icon adminpro-settings author-log-ic"></span>الاعدادات
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" onclick="LogOut()">
+                                                        <span class="adminpro-icon adminpro-locked author-log-ic"></span>خروج
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item nav-setting-open">
+                                            <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="fa fa-gears"></i></a>
+
+                                            <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated flipInX">
+                                                <div class="setting-panel-area">
+                                                    <div class="note-heading-indicate">
+                                                        <h2><i class="fa fa-check"></i> الإعدادات العامة</h2>
+                                                        <p> اختر ما ينسبك لتنسيق الصفحة الرئيسية</p>
+                                                    </div>
+                                                    <ul class="setting-panel-list">
+                                                        <li>
+                                                            <div class="checkbox-setting-pro">
+                                                                <div class="checkbox-title-pro">
+                                                                    <h2>الاخطارات</h2>
+                                                                    <div class="ts-custom-check">
+                                                                        <div class="onoffswitch">
+                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
+                                                                            <label class="onoffswitch-label" for="example">
+                                                                                <span class="onoffswitch-inner"></span>
+                                                                                <span class="onoffswitch-switch"></span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="checkbox-setting-pro">
+                                                                <div class="checkbox-title-pro">
+                                                                    <h2>البحث</h2>
+                                                                    <div class="ts-custom-check">
+                                                                        <div class="onoffswitch">
+                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
+                                                                            <label class="onoffswitch-label" for="example3">
+                                                                                <span class="onoffswitch-inner"></span>
+                                                                                <span class="onoffswitch-switch"></span>
+                                                                            </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header top area end-->
+            <!-- income order visit user Start -->
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+
+        <!-- Footer Start-->
+        <div class="footer-copyright-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer-copy-right">
+                            <p>
+                                Copyright © 2020, <span>ATMA</span> / Powered by <a href="#">ATMA</a>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+
+
+        <environment include="Development">
+            <!-- jquery
+    ============================================ -->
+            <script src="~/js/vendor/jquery-1.11.3.min.js"></script>
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <!-- bootstrap JS
+    ============================================ -->
+            @*<script src="~/js/bootstrap.min.js"></script>*@
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            <!-- meanmenu JS
+    ============================================ -->
+            <script src="~/js/jquery.meanmenu.js"></script>
+            <!-- mCustomScrollbar JS
+    ============================================ -->
+            <script src="~/js/jquery.mCustomScrollbar.concat.min.js"></script>
+            <!-- sticky JS
+    ============================================ -->
+            <script src="~/js/jquery.sticky.js"></script>
+            <!-- scrollUp JS
+    ============================================ -->
+            <script src="~/js/jquery.scrollUp.min.js"></script>
+            <!-- summernote JS
+    ============================================ -->
+            <script src="~/js/summernote.min.js"></script>
+            <script src="~/js/summernote-active.js"></script>
+            <!-- scrollUp JS
+    ============================================ -->
+            <script src="~/js/wow/wow.min.js"></script>
+            <!-- counterup JS
+    ============================================ -->
+            <script src="~/js/counterup/jquery.counterup.min.js"></script>
+            <script src="~/js/counterup/waypoints.min.js"></script>
+            <script src="~/js/counterup/counterup-active.js"></script>
+            <!-- jvectormap JS
+    ============================================ -->
+            <script src="~/js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+            <script src="~/js/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+            <script src="~/js/jvectormap/jvectormap-active.js"></script>
+            <!-- peity JS
+    ============================================ -->
+            <script src="~/js/peity/jquery.peity.min.js"></script>
+            <script src="~/js/peity/peity-active.js"></script>
+            <!-- sparkline JS
+    ============================================ -->
+            <script src="~/js/sparkline/jquery.sparkline.min.js"></script>
+            <script src="~/js/sparkline/sparkline-active.js"></script>
+            <!-- flot JS
+    ============================================ -->
+            <script src="~/js/flot/jquery.flot.js"></script>
+            <script src="~/js/flot/jquery.flot.tooltip.min.js"></script>
+            <script src="~/js/flot/jquery.flot.spline.js"></script>
+            <script src="~/js/flot/jquery.flot.resize.js"></script>
+            <script src="~/js/flot/jquery.flot.pie.js"></script>
+            <script src="~/js/flot/jquery.flot.symbol.js"></script>
+            <script src="~/js/flot/jquery.flot.time.js"></script>
+            <script src="~/js/flot/dashtwo-flot-active.js"></script>
+            <!-- data table JS
+    ============================================ -->
+            <script src="~/js/data-table/bootstrap-table.js"></script>
+            <script src="~/js/data-table/tableExport.js"></script>
+            <script src="~/js/data-table/data-table-active.js"></script>
+            <script src="~/js/data-table/bootstrap-table-editable.js"></script>
+            <script src="~/js/data-table/bootstrap-editable.js"></script>
+            <script src="~/js/data-table/bootstrap-table-resizable.js"></script>
+            <script src="~/js/data-table/colResizable-1.5.source.js"></script>
+            <script src="~/js/data-table/bootstrap-table-export.js"></script>
+            <!--  dropzone JS
+    ============================================ -->
+            <script src="~/js/dropzone.js"></script>
+            <!-- main JS
+    ============================================ -->
+
+            <script src="~/js/main.js"></script>
+            <script src="~/js/datatable/js/jquery.dataTables.js"></script>
+            <script src="~/js/datatable/js/jquery.dataTables.js"></script>
+            <script src="~/js/datatable/js/dataTables.bootstrap4.js"></script>
+
+        </environment>
+
+        <environment include="Production">
+            <!-- jquery
+    ============================================ -->
+            <script src="~/js/vendor/jquery-1.11.3.min.js"></script>
+            <!-- bootstrap JS
+    ============================================ -->
+            <script src="~/js/bootstrap.min.js"></script>
+            <!-- meanmenu JS
+    ============================================ -->
+            <script src="~/js/jquery.meanmenu.js"></script>
+            <!-- mCustomScrollbar JS
+    ============================================ -->
+            <script src="~/js/jquery.mCustomScrollbar.concat.min.js"></script>
+            <!-- sticky JS
+    ============================================ -->
+            <script src="~/js/jquery.sticky.js"></script>
+            <!-- scrollUp JS
+    ============================================ -->
+            <script src="~/js/jquery.scrollUp.min.js"></script>
+            <!-- scrollUp JS
+    ============================================ -->
+            <script src="~/js/wow/wow.min.js"></script>
+            <!-- summernote JS
+    ============================================ -->
+            <script src="~/js/summernote.min.js"></script>
+            <script src="~/js/summernote-active.js"></script>
+            <!-- counterup JS
+    ============================================ -->
+            <script src="~/js/counterup/jquery.counterup.min.js"></script>
+            <script src="~/js/counterup/waypoints.min.js"></script>
+            <script src="~/js/counterup/counterup-active.js"></script>
+            <!-- jvectormap JS
+    ============================================ -->
+            <script src="~/js/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+            <script src="~/js/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+            <script src="~/js/jvectormap/jvectormap-active.js"></script>
+            <!-- peity JS
+    ============================================ -->
+            <script src="~/js/peity/jquery.peity.min.js"></script>
+            <script src="~/js/peity/peity-active.js"></script>
+            <!-- sparkline JS
+    ============================================ -->
+            <script src="~/js/sparkline/jquery.sparkline.min.js"></script>
+            <script src="~/js/sparkline/sparkline-active.js"></script>
+            <!-- flot JS
+    ============================================ -->
+            <script src="~/js/flot/jquery.flot.js"></script>
+            <script src="~/js/flot/jquery.flot.tooltip.min.js"></script>
+            <script src="~/js/flot/jquery.flot.spline.js"></script>
+            <script src="~/js/flot/jquery.flot.resize.js"></script>
+            <script src="~/js/flot/jquery.flot.pie.js"></script>
+            <script src="~/js/flot/jquery.flot.symbol.js"></script>
+            <script src="~/js/flot/jquery.flot.time.js"></script>
+            <script src="~/js/flot/dashtwo-flot-active.js"></script>
+            <!-- data table JS
+    ============================================ -->
+            <script src="~/js/data-table/bootstrap-table.js"></script>
+            <script src="~/js/data-table/tableExport.js"></script>
+            <script src="~/js/data-table/data-table-active.js"></script>
+            <script src="~/js/data-table/bootstrap-table-editable.js"></script>
+            <script src="~/js/data-table/bootstrap-editable.js"></script>
+            <script src="~/js/data-table/bootstrap-table-resizable.js"></script>
+            <script src="~/js/data-table/colResizable-1.5.source.js"></script>
+            <script src="~/js/data-table/bootstrap-table-export.js"></script>
+            <!--  dropzone JS
+    ============================================ -->
+            <script src="~/js/dropzone.js"></script>
+            <!-- main JS
+    ============================================ -->
+            <script src="~/js/main.js"></script>
+            <script src="~/js/datatable/js/jquery.dataTables.js"></script>
+            <script src="~/js/datatable/js/jquery.dataTables.js"></script>
+            <script src="~/js/datatable/js/dataTables.bootstrap4.js"></script>
+        </environment>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script type="text/javascript">
+            function LogOut() {
+                sessionStorage.removeItem("OrdersFromMobile");
+                window.location.replace("/Account/Logout");
+            }
+        </script>
+        @RenderSection("Scripts", required: false)
+
+    </div>
+</body>
+</html>
